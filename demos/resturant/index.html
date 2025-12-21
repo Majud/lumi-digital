@@ -1,51 +1,470 @@
 <!doctype html>
 <html lang="de">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Restaurant Demo – Beispiel-Landingpage</title>
-  <meta name="description" content="Moderne Beispiel-Landingpage für ein Restaurant – Demo-Seite." />
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="brand">
-      <span class="dot"></span>
-      <span>Ristorante LUMINA</span>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Restaurant Demo – LUMI Digital</title>
+    <meta name="description" content="Moderne Restaurant-Landingpage (Demo) – Designbeispiel von LUMI Digital." />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/menu.css" />
+    <link rel="stylesheet" href="assets/css/reviews.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+
+<body>
+  <!-- Top Notice -->
+  <div class="top-note">
+    <div class="container">
+      <span>Demo-Beispielseite · Kein echtes Unternehmen</span>
+      <a class="top-link" href="../../index.html">Zurück zur Übersicht</a>
     </div>
-    <a class="btn primary" href="#kontakt">Jetzt reservieren</a>
+  </div>
+
+  <!-- Navbar -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo">
+        <img class="logo-image" src="images/logo.png" alt="Ristorante LUMINA">
+      </div>
+
+      <nav class="nav-links">
+        <a href="#about">Über uns</a>
+        <a href="#speisekarte">Speisekarte</a>
+        <a href="#bewertungen">Bewertungen</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn ghost" href="#menu">Menü</a>
+        <a class="btn primary" href="#kontakt">Jetzt reservieren</a>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">Über uns</a>
+      <a href="#menu">Speisekarte</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="panel">
-      <h1>Italienische Küche, die man schmeckt.</h1>
-      <p class="lead">
-        Frische Zutaten, ehrliche Rezepte und ein stilvolles Ambiente.
-      </p>
-      <div class="cta">
-        <a class="btn primary" href="tel:+49999999999">📞 Anrufen</a>
-        <a class="btn" href="#menu">📋 Speisekarte</a>
-      </div>
-      <p class="note">Demo – Beispielseite</p>
+  <!-- Hero -->
+  <main class="hero">
+    <div class="container hero-grid">
+      <section class="hero-left">
+        <div class="pill">WILLKOMMEN IM RESTAURANT</div>
+
+        <h1>
+          Dein <span class="accent">Lieblingsort</span><br />
+          für richtig gutes <span class="accent">Essen</span><br />
+          und schöne <span class="accent">Momente</span>.
+        </h1>
+
+        <p class="lead">
+          Hausgemachte Küche, frische Zutaten und ein Ambiente, das man merkt.
+          Perfekt für Lunch, Date Night oder Familienessen.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary big" href="tel:+49999999999">Jetzt anrufen</a>
+          <a class="btn ghost big" href="#menu">Speisekarte ansehen</a>
+        </div>
+
+        <div class="hero-badges">
+          <div class="badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4" style="background-color: orange; width: 1.2em; height: 1.2em; border-radius: 9999px; padding: 0.2em; color: white; margin-right: 0.4em;">
+                <path fill-rule="evenodd" d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z" clip-rule="evenodd" />
+            </svg>
+            <div class="badge-text">
+                <b>4.9</b>
+                <span>Google Rating</span>
+            </div>
+          </div>
+          <div class="badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4" style="background-color: orange; width: 1.2em; height: 1.2em; border-radius: 9999px; padding: 0.2em; color: white; margin-right: 0.4em;">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Zm7.75-4.25a.75.75 0 0 0-1.5 0V8c0 .414.336.75.75.75h3.25a.75.75 0 0 0 0-1.5h-2.5v-3.5Z" clip-rule="evenodd" />
+            </svg>
+            <div class="badge-text">
+                <b>20 min</b>
+                <span>Ø Mittagstisch</span>
+            </div>
+            
+          </div>
+          <div class="badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4" style="background-color: orange; width: 1.2em; height: 1.2em; border-radius: 9999px; padding: 0.2em; color: white; margin-right: 0.4em;">
+                <path d="M13.5 2.2C8.9 2.3 5.5 4.3 3.6 7c-1.7 2.4-1.9 5.4-.6 7.6 2.2 1.2 5.2 1 7.6-.7 2.8-1.9 4.8-5.3 4.9-9.9 0-.5-.4-.9-1-.8zM5.2 13.2c1.2-2 3.3-3.8 6.4-5.2-2.2 2.1-4.1 4.3-5.2 6.4-.5.1-.9 0-1.2-.2z"/>
+            </svg>
+            <div class="badge-text">
+                <b>Vegetarisch</b>
+                <span>Vegan möglich</span>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="hero-right">
+        <div class="hero-image-wrap">
+          <img src="images/dish_1.png" alt="Gericht – Demo" class="hero-image" />
+          <div class="glow"></div>
+        </div>
+
+        <div class="cards">
+          <article class="mini-card">
+            <img src="images/dish_2.png" alt="Salat – Demo" />
+            <div class="mini-info">
+              <div class="mini-top">
+                <h3>Salat Special</h3>
+                <span class="heart">♡</span>
+              </div>
+              <div class="mini-bottom">
+                <span class="star">★</span><span>5.0</span>
+                <span class="dot">•</span>
+                <span class="price">9,90€</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="mini-card">
+            <img src="images/dish_3.png" alt="Bowl – Demo" />
+            <div class="mini-info">
+              <div class="mini-top">
+                <h3>Fit Bowl</h3>
+                <span class="heart">♡</span>
+              </div>
+              <div class="mini-bottom">
+                <span class="star">★</span><span>4.8</span>
+                <span class="dot">•</span>
+                <span class="price">12,50€</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
     </div>
-    <div class="photo"></div>
+  </main>
+
+<!-- Über uns (Premium / Editorial) -->
+<section id="about" class="section">
+  <div class="container about2">
+    <div class="about2-top">
+      <div class="pill">ÜBER UNS</div>
+      <h2>
+        Ein Ort für <span class="accent">ehrlichen Geschmack</span><br />
+        und ruhige, schöne Momente.
+      </h2>
+    </div>
+
+    <div class="about2-grid">
+      <!-- Left: Text -->
+      <div class="about2-text">
+        <p class="lead">
+          Wir glauben: Qualität beginnt bei den Zutaten – und endet bei der Stimmung am Tisch.
+          Deshalb kochen wir täglich frisch, halten die Karte bewusst schlank und setzen auf
+          klare Aromen statt Show.
+        </p>
+
+        <p class="muted">
+          Ob Mittagstisch, Date Night oder Familienessen: Bei uns soll es leicht sein,
+          sich wohlzufühlen – mit aufmerksamem Service und einer Küche, die man schmeckt.
+        </p>
+
+        <div class="about2-actions">
+          <a class="btn primary big" href="#speisekarte">Speisekarte ansehen</a>
+          <a class="btn ghost big" href="#kontakt">Reservieren</a>
+        </div>
+      </div>
+
+      <!-- Right: Trust / Values -->
+      <div class="about2-proof">
+        <div class="proof-box">
+          <div class="proof-row">
+            <span class="proof-label">Qualität</span>
+            <span class="proof-value">ausgewählte Zutaten</span>
+          </div>
+          <div class="proof-row">
+            <span class="proof-label">Frische</span>
+            <span class="proof-value">täglich vorbereitet</span>
+          </div>
+          <div class="proof-row">
+            <span class="proof-label">Küche</span>
+            <span class="proof-value">klassisch × modern</span>
+          </div>
+          <div class="proof-row">
+            <span class="proof-label">Ambiente</span>
+            <span class="proof-value">ruhig, stilvoll, warm</span>
+          </div>
+        </div>
+
+        <div class="about2-metrics">
+          <div class="metric">
+            <div class="metric-num">4.9</div>
+            <div class="metric-txt">Google Rating</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">20 min</div>
+            <div class="metric-txt">Ø Mittagstisch</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">Vegan</div>
+            <div class="metric-txt">Optionen möglich</div>
+          </div>
+        </div>
+
+        <div class="about2-note">
+          <span class="dot"></span>
+          <span>Bewusst reduziert: weniger Gerichte, dafür konstant hohe Qualität.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+    <!-- Menu -->
+  <section id="speisekarte" class="section soft">
+  <div class="container">
+    <div class="section-head">
+      <h2>Speisekarte</h2>
+      <p>Ausgewählte Highlights – frisch, saisonal und mit viel Liebe zubereitet.</p>
+    </div>
+
+    <div class="menu-grid-8">
+      <!-- 1 -->
+      <article class="dish-card">
+        <div class="dish-img">
+          <img src="images/menu/dish-1.png" alt="Caesar Salat" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-top">
+            <h3>Caesar Salat</h3>
+            <span class="dish-price">9,90€</span>
+          </div>
+          <p>Römersalat, Parmesan, Croûtons, Caesar-Dressing. Optional mit Hähnchen.</p>
+          <div class="dish-tags">
+            <span class="tag">Frisch</span>
+            <span class="tag">Beliebt</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="dish-card">
+        <div class="dish-img">
+          <img src="images/menu/dish-2.png" alt="Burrata & Tomaten" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-top">
+            <h3>Burrata & Tomaten</h3>
+            <span class="dish-price">11,90€</span>
+          </div>
+          <p>Cremige Burrata, bunte Tomaten, Basilikum, Olivenöl, Balsamico.</p>
+          <div class="dish-tags">
+            <span class="tag">Vegetarisch</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="dish-card">
+        <div class="dish-img">
+          <img src="images/menu/dish-3.png" alt="Poke Bowl Lachs" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-top">
+            <h3>Poke Bowl (Lachs)</h3>
+            <span class="dish-price">12,50€</span>
+          </div>
+          <p>Reis, Lachs, Avocado, Gurke, Edamame, Sesam, Soja-Limetten-Dressing.</p>
+          <div class="dish-tags">
+            <span class="tag">Modern</span>
+            <span class="tag">Protein</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="dish-card">
+        <div class="dish-img">
+          <img src="images/menu/dish-4.png" alt="Pasta al Tartufo" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-top">
+            <h3>Pasta al Tartufo</h3>
+            <span class="dish-price">16,90€</span>
+          </div>
+          <p>Hausgemachte Pasta, Trüffelrahm, Parmesan, schwarzer Pfeffer.</p>
+          <div class="dish-tags">
+            <span class="tag">Signature</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="dish-card">
+        <div class="dish-img">
+          <img src="images/menu/dish-5.png" alt="Pizza Prosciutto" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-top">
+            <h3>Pizza Prosciutto</h3>
+            <span class="dish-price">13,50€</span>
+          </div>
+          <p>San Marzano, Mozzarella, Prosciutto, Rucola, Olivenöl.</p>
+          <div class="dish-tags">
+            <span class="tag">Klassiker</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="dish-card">
+        <div class="dish-img">
+          <img src="images/menu/dish-6.png" alt="Gegrilltes Hähnchen" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-top">
+            <h3>Gegrilltes Hähnchen</h3>
+            <span class="dish-price">15,90€</span>
+          </div>
+          <p>Zart gegrillt, Rosmarin-Kartoffeln, knackiger Salat, Zitronen-Jus.</p>
+          <div class="dish-tags">
+            <span class="tag">Grill</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="dish-card">
+        <div class="dish-img">
+          <img src="images/menu/dish-7.png" alt="Lachsfilet" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-top">
+            <h3>Lachsfilet</h3>
+            <span class="dish-price">18,50€</span>
+          </div>
+          <p>Auf der Haut gebraten, Gemüse der Saison, Kräuterbutter.</p>
+          <div class="dish-tags">
+            <span class="tag">Fisch</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="dish-card">
+        <div class="dish-img">
+          <img src="images/menu/dish-8.png" alt="Tiramisu" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-top">
+            <h3>Tiramisu</h3>
+            <span class="dish-price">6,50€</span>
+          </div>
+          <p>Klassisch italienisch, cremig, mit feinem Kakao – täglich frisch.</p>
+          <div class="dish-tags">
+            <span class="tag">Dessert</span>
+            <span class="tag">Hausgemacht</span>
+          </div>
+        </div>
+      </article>
+    </div>
+</section>
+
+
+
+  <!-- Reviews -->
+  <section id="bewertungen" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Bewertungen</h2>
+        <p>Social Proof – kurz, echt wirkend, und sehr effektiv.</p>
+      </div>
+
+      <div class="review-grid">
+        <div class="review">
+          <div class="review-stars">★★★★★</div>
+          <p>„Super Atmosphäre, sehr freundlich – und die Pasta war perfekt.“</p>
+          <span>— Anna K.</span>
+        </div>
+        <div class="review">
+          <div class="review-stars">★★★★★</div>
+          <p>„Schneller Service, top Mittagstisch. Kommen gerne wieder!“</p>
+          <span>— Markus W.</span>
+        </div>
+        <div class="review">
+          <div class="review-stars">★★★★★</div>
+          <p>„Stilvoll, sauber, lecker. Genau das, was man sich wünscht.“</p>
+          <span>— Selin A.</span>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- MENU -->
-  <section id="menu" class="panel">
-    <h2>Speisekarte</h2>
+  <!-- Contact -->
+  <section id="kontakt" class="section soft">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <h2>Kontakt & Reservierung</h2>
+        <p>Einfach und direkt – so maximierst du Anfragen.</p>
+
+        <div class="contact-list">
+          <div><b>Telefon:</b> +49 999 999999 (Demo)</div>
+          <div><b>Adresse:</b> Musterstraße 15, 94032 Passau</div>
+          <div><b>Öffnungszeiten:</b> Mo–Sa 11:30–14:30 · 17:30–22:30</div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary big" href="tel:+49999999999">Jetzt anrufen</a>
+          <a class="btn ghost big" target="_blank" rel="noopener"
+             href="https://wa.me/491234567890?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Tisch%20reservieren.">WhatsApp</a>
+        </div>
+
+        <div class="disclaimer">
+          Demo-Hinweis: Beispielseite · Inhalte/Marke sind fiktiv.
+        </div>
+      </div>
+
+      <div class="map-card">
+  <div class="map-card">
+  <iframe
+    title="Google Maps"
+    width="100%"
+    height="100%"
+    style="border:0"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps?q=48.59528,13.43556&z=16&output=embed">
+  </iframe>
+</div>
+
+</div>
+
+    </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="kontakt" class="panel">
-    <h2>Kontakt</h2>
-  </section>
-
-  <footer>
-    Demo – Erstellt von Majd · © <span id="year"></span>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> LUMI Digital · Demo Restaurant Landing Page</span>
+      <span class="muted">Made for outreach & portfolio</span>
+    </div>
   </footer>
 
   <script src="assets/js/main.js"></script>

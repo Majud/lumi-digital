@@ -1,0 +1,17 @@
+.section{ padding:52px 0; }
+.section.soft{
+  background:var(--soft);
+  border-top:1px solid rgba(226,232,240,.7);
+  border-bottom:1px solid rgba(226,232,240,.7);
+}
+
+.section-head h2{
+  margin:0;
+  font-size:28px;
+  letter-spacing:-.3px;
+}
+.section-head p{
+  margin:10px 0 0;
+  color:var(--muted);
+  line-height:1.7;
+}

@@ -1,0 +1,8 @@
+.footer{ padding:22px 0; }
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  color:var(--muted);
+  font-size:13px;
+}

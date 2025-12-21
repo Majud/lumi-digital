@@ -1,0 +1,173 @@
+/* =========================
+   ABOUT SECTION (Premium)
+   + separation from HERO
+   ========================= */
+
+/* ✅ Separation fix:
+   - add breathing room after hero via a divider on #about
+   - keep it subtle and modern */
+#about{
+  position: relative;
+  scroll-margin-top: 120px; /* لأن الـ navbar sticky واللوغو كبير */
+  background: #ffffff;
+  padding-top: 72px; /* يخلي بداية القسم ما تلزق بالهيرو */
+}
+
+/* top divider line */
+#about::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:1px;
+  background: rgba(226,232,240,.9); /* نفس line */
+}
+
+/* soft fade band (premium separation) */
+#about::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:-40px;
+  height:40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+  pointer-events:none;
+}
+
+/* layout */
+.about2-top h2{
+  margin: 14px 0 0;
+  line-height: 1.12;
+}
+
+.about2-grid{
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 42px;
+  align-items: start;
+}
+
+/* text side */
+.about2-text .muted{
+  margin-top: 14px;
+  opacity: .82;
+  line-height: 1.7;
+}
+
+.about2-actions{
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* proof card */
+.about2-proof{
+  position: relative;
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(251,251,253,.92); /* قريب من --soft بس أخف */
+  border: 1px solid rgba(226,232,240,.9);
+  box-shadow: 0 22px 60px rgba(2,6,23,.10);
+  overflow: hidden;
+}
+
+/* subtle orange glow like your hero */
+.about2-proof::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(420px 240px at 20% 20%, rgba(249,115,22,.14), transparent 60%),
+    radial-gradient(420px 240px at 85% 75%, rgba(251,146,60,.10), transparent 60%);
+  pointer-events:none;
+}
+
+/* proof rows box */
+.proof-box{
+  position: relative;
+  border-radius: 18px;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(226,232,240,.9);
+  padding: 14px;
+}
+
+.proof-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 10px 6px;
+  border-bottom: 1px solid rgba(226,232,240,.6);
+}
+.proof-row:last-child{ border-bottom: 0; }
+
+.proof-label{
+  font-weight: 800;
+  letter-spacing: .2px;
+  opacity: .92;
+}
+.proof-value{
+  opacity: .82;
+}
+
+/* metrics */
+.about2-metrics{
+  position: relative;
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.metric{
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(226,232,240,.9);
+}
+
+.metric-num{
+  font-weight: 900;
+  letter-spacing: .2px;
+  font-size: 16px;
+}
+
+.metric-txt{
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: .82;
+}
+
+/* note */
+.about2-note{
+  position: relative;
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid rgba(226,232,240,.7);
+  font-size: 13.5px;
+  line-height: 1.5;
+  opacity: .9;
+}
+
+.about2-note .dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(249,115,22,.12);
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  #about{ padding-top: 56px; }
+  .about2-grid{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}

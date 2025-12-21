@@ -1,0 +1,36 @@
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:16px;
+  align-items:stretch;
+}
+
+.contact-card, .map-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:26px;
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+.contact-card{ padding:22px; }
+.contact-card h2{ margin:0 0 8px; }
+.contact-card p{ margin:0 0 14px; color:var(--muted); line-height:1.7; }
+
+.contact-list{
+  display:grid;
+  gap:10px;
+  margin:14px 0 18px;
+  color:var(--text);
+}
+.contact-list b{ color:var(--text); }
+
+.disclaimer{
+  margin-top:14px;
+  font-size:12px;
+  color:var(--muted);
+  border-top:1px solid var(--line);
+  padding-top:12px;
+}
+
+.map-card iframe{ height:100%; min-height:360px; }

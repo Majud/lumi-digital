@@ -1,0 +1,25 @@
+.contact{
+  padding:54px 0 24px;
+}
+
+.cta{
+  text-align:center;
+  border-radius: 22px;
+  border:1px solid rgba(255,255,255,.08);
+  background:
+    radial-gradient(900px 520px at 50% -20%, rgba(255,90,31,.22), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  box-shadow:var(--shadow);
+  padding:34px 18px;
+}
+
+.cta h2{
+  font-size: clamp(26px, 3.2vw, 44px);
+}
+.cta p{
+  max-width: 72ch;
+  margin:10px auto 0;
+  color:var(--muted);
+  line-height:1.65;
+}
+.cta .btn{margin-top:18px}

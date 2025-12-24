@@ -1,0 +1,11 @@
+@media (max-width: 980px){
+  .nav-links{ display:none; }
+  .nav-cta{ display:none; }
+  .burger{ display:block; }
+
+  .hero-grid{ grid-template-columns: 1fr; gap: 18px; }
+}
+
+@media (max-width: 720px){
+  .section{ padding: 54px 0; }
+}

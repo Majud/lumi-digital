@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 
   <!-- Section CSS (optional modular) -->
@@ -41,14 +41,14 @@
     <div class="container nav">
       <a class="brand" href="#">
       <div class="logo">
-        <img class="logo-image" src="images/logo.png" alt="Ristorante LUMINA">
+        <img class="logo-image" src="images/logo.png" alt="FITFORGE">
       </div>
       </a>
 
       <nav class="nav-links">
         <a href="#about">About Us</a>
         <a href="#services">Services</a>
-        <a href="#programs">Project</a>
+        <a href="#services">Programs</a>
         <a href="#faq">FAQ</a>
       </nav>
 
@@ -110,7 +110,13 @@
         </div>
 
         <div class="hero-right">
-          <img src="images/logo.png" aria-hidden="true" />
+          <div class="hero-media">
+            <img src="images/heroImage.png" alt="Athlete training with a coach" />
+            <div class="hero-badge">
+              <span class="badge-title">24/7</span>
+              <span class="badge-sub">Open Gym</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -147,7 +153,7 @@
           </div>
         </div>
 
-        <a class="video-card" href="#programs" aria-label="Play video">
+        <a class="video-card" href="#services" aria-label="Play video">
           <span class="video-play"></span>
           <div class="video-floor"></div>
         </a>
@@ -174,7 +180,7 @@
 
         <div class="card-grid">
           <article class="service-card">
-            <div class="service-media media-1"></div>
+            <img src="images/PersonalTraining.png" alt="Personal Training">
             <div class="service-body">
               <h3>Personal Training</h3>
               <p>1:1 coaching with a plan built around your goals.</p>
@@ -183,7 +189,7 @@
           </article>
 
           <article class="service-card">
-            <div class="service-media media-2"></div>
+            <img src="images/fitnessClasses.png" alt="Fitness Classes">
             <div class="service-body">
               <h3>Fitness Classes</h3>
               <p>Energy-packed sessions for all levels & schedules.</p>
@@ -192,7 +198,7 @@
           </article>
 
           <article class="service-card">
-            <div class="service-media media-3"></div>
+            <img src="images/swimTraining.png" alt="Swim Training">
             <div class="service-body">
               <h3>Swim Training</h3>
               <p>Technique + conditioning to boost performance.</p>
@@ -201,7 +207,7 @@
           </article>
 
           <article class="service-card">
-            <div class="service-media media-4"></div>
+            <img src="images/mobilityRecovery.png" alt="Mobility & Recovery">
             <div class="service-body">
               <h3>Mobility & Recovery</h3>
               <p>Recover better with mobility and guided routines.</p>
@@ -318,35 +324,103 @@
     </section>
 
     <!-- MAP / LOCATIONS -->
-    <section class="section section--soft faq">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Our Locations</p>
-          <h2>Our Global Presence: <span class="accent">Fitness</span> Centers Around the World</h2>
-          <div class="locations-meta">
-            <div class="locations-count"><span>23+</span><small>Countries</small></div>
-            <p class="section-sub">
-              No matter where you are, our gyms are here to help you reach your fitness goals.
-              Explore our worldwide fitness community today!
-            </p>
-          </div>
-        </div>
+    <section id="faq" class="section section--soft faq">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-kicker">Our Locations</p>
+      <h2>Our Global Presence: <span class="accent">Fitness</span> Centers Around the World</h2>
 
-        <div class="map-card" aria-label="World map">
-          <div class="map-dots"></div>
+        <div class="locations-meta">
+          <div class="locations-count"><span>2</span><small>Studios</small></div>
+          <p class="section-sub">
+            Two locations in Passau – easy to reach and perfect for your training.
+            Visit us at either spot and get started right away.
+          </p>
         </div>
-      </div>
-    </section>
+    </div>
+
+    <div class="locations-grid">
+      <article class="location-card">
+        <div class="location-head">
+          <h3>Location 1</h3>
+          <p class="muted">Musterstraße 123, 94032 Passau</p>
+        </div>
+        <iframe
+          class="map-embed"
+          title="Musterstraße 123, 94032 Passau"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=48.580855,13.426584&output=embed">
+        </iframe>
+      </article>
+
+      <article class="location-card">
+        <div class="location-head">
+          <h3>Location 2</h3>
+          <p class="muted">Musterstraße 456, 94032 Passau</p>
+        </div>
+        <iframe
+          class="map-embed"
+          title="Musterstraße 456, 94032 Passau"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=48.557330,13.398532&output=embed">
+        </iframe>
+      </article>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- CTA / CONTACT -->
     <section id="contact" class="section section--dark contact">
-      <div class="container cta">
-        <h2>Ready to Grow?</h2>
-        <p>
-          Take the first step toward a stronger, healthier you by claiming your free one-week membership.
-          Experience our equipment, facilities, and energizing classes.
-        </p>
-        <a class="btn btn-primary" href="#">Get free trial</a>
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <p class="section-kicker">Contact</p>
+          <h2>Talk to a Coach</h2>
+          <p class="section-sub">
+            Tell us about your goals and we will build the right plan for you. We answer within 24 hours.
+          </p>
+
+          <div class="contact-info">
+            <div>
+              <div class="info-label">Phone</div>
+              <div class="info-value">+49 851 123 456</div>
+            </div>
+            <div>
+              <div class="info-label">Email</div>
+              <div class="info-value">hello@fitforge.com</div>
+            </div>
+            <div>
+              <div class="info-label">Hours</div>
+              <div class="info-value">Mon-Sun, 24/7</div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label class="form-field">
+              <span>Full name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label class="form-field">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@email.com" required>
+            </label>
+          </div>
+          <label class="form-field">
+            <span>Goal</span>
+            <input type="text" name="goal" placeholder="Strength, fat loss, performance">
+          </label>
+          <label class="form-field">
+            <span>Message</span>
+            <textarea name="message" rows="4" placeholder="Tell us a bit about your training."></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Send request</button>
+          <p class="form-note muted">By sending this form you agree to be contacted by FITFORGE.</p>
+        </form>
       </div>
     </section>
 
@@ -355,14 +429,15 @@
       <div class="container footer-grid">
         <div class="foot-brand">
           <div class="brand">
-            <span class="brand-dot"></span><span class="brand-text">FITFORGE</span>
+            <img class="logo-image" src="images/logo.png" alt="FITFORGE">
+            <span class="brand-text">FITFORGE</span>
           </div>
           <p class="muted">Train smarter. Feel stronger. Live better.</p>
         </div>
 
         <div class="foot-links">
           <a href="#services">Services</a>
-          <a href="#programs">Project</a>
+          <a href="#services">Programs</a>
           <a href="#about">About Us</a>
         </div>
 

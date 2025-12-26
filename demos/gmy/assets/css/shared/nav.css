@@ -17,7 +17,7 @@
   top:0;
   z-index:50;
   backdrop-filter: blur(10px);
-  background: rgba(7,10,14,.55);
+  background: rgba(7,10,14,.72);
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
 
@@ -25,7 +25,7 @@
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:14px 0;
+  padding:12px 0;
   gap:18px;
 }
 
@@ -50,6 +50,7 @@
   align-items:center;
   color:rgba(233,238,246,.75);
   font-weight:500;
+  font-size:14px;
 }
 .nav-links a:hover{color:#fff}
 
@@ -100,6 +101,6 @@
   letter-spacing:.2px;
 }
 .logo-image{
-  height:100px;
+  height:54px;
   width:auto;
 }

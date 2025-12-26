@@ -17,19 +17,24 @@
 .card-grid{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
-  gap:14px;
-  margin-top:18px;
+  gap:18px;
+  margin-top:22px;
 }
 
 .service-card{
-  border-radius: 18px;
+  border-radius: 20px;
   border:1px solid rgba(255,255,255,.08);
-  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
   box-shadow:var(--shadow-soft);
   overflow:hidden;
   min-height: 260px;
   display:flex;
   flex-direction:column;
+  transition:transform .18s ease, border-color .18s ease;
+}
+.service-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,90,31,.35);
 }
 
 .service-media{
@@ -44,7 +49,7 @@
 .media-4{background-image:url("https://images.unsplash.com/photo-1517963628607-235ccdd5476c?auto=format&fit=crop&w=1400&q=70")}
 
 .service-body{
-  padding:14px 14px 16px;
+  padding:16px 16px 18px;
 }
 .service-body h3{
   font-size:16px;

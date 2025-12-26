@@ -2,22 +2,54 @@
 .section{
   position: relative;
   padding: 96px 0;
+  background: var(--section-dark);
 }
 
 /* alternating surfaces */
 .section--dark{
-  background: rgba(10,14,20,.6);
+  background: var(--section-dark);
 }
 
 .section--soft{
-  background: rgba(255,255,255,.03);
-  border-top: 1px solid rgba(255,255,255,.06);
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  background: var(--section-soft);
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
 }
 
-.section::before,
+.section::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255,255,255,.08),
+    rgba(255,90,31,.2),
+    rgba(255,255,255,.08),
+    transparent
+  );
+  opacity:.7;
+  pointer-events:none;
+}
+
 .section::after{
-  content:none;
+  content:"";
+  position:absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.12),
+    rgba(255,255,255,.06),
+    transparent
+  );
+  opacity:.5;
+  pointer-events:none;
 }
 
 /* section head styling */

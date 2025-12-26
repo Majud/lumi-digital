@@ -458,6 +458,27 @@
     const burger = document.querySelector('.nav-burger');
     const links = document.querySelector('.nav-links');
     burger?.addEventListener('click', () => links.classList.toggle('open'));
+
+    // Hero intro + section reveal on scroll
+    const heroLeft = document.querySelector('.hero-left');
+    heroLeft?.classList.add('is-animated');
+
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => section.classList.add('reveal'));
+    document.querySelector('.hero')?.classList.add('in-view');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+    sections.forEach((section) => observer.observe(section));
   </script>
 </body>
 </html>

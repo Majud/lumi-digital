@@ -1,0 +1,220 @@
+/* ===========================
+   Services (Pro)
+   =========================== */
+
+.services-pro{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.services-pro__main{
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+}
+
+.services-pro__meta{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.services-pro__label{
+  margin:0;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(34,211,238,.92);
+}
+
+.services-pro__hint{
+  margin:0;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+  max-width: 48ch;
+  text-align: right;
+}
+
+.services-pro__grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.service-item{
+  display:flex;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+.service-item:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.065);
+  border-color: rgba(34,211,238,.20);
+}
+
+.service-item__icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  flex: 0 0 auto;
+  font-size: 18px;
+}
+
+.service-item__title{
+  margin: 0 0 6px;
+  font-size: 15px;
+  letter-spacing: -.01em;
+}
+
+.service-item__text{
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+.services-pro__note{
+  display:flex;
+  gap: 10px;
+  align-items:flex-start;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.services-pro__noteDot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  margin-top: 6px;
+  background: linear-gradient(135deg, var(--accent-b), var(--accent-a));
+  box-shadow: 0 0 0 4px rgba(34,211,238,.10);
+  flex: 0 0 auto;
+}
+
+.services-pro__noteText{
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* Aside card */
+.services-pro__aside{
+  padding: 18px;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.js.reveal-ready .services-pro__aside{
+  transform: translateX(22px);
+}
+
+.js.reveal-ready .services-pro__aside.is-visible{
+  transform: translateX(0);
+}
+
+.services-pro__asideKicker{
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(167,139,250,.95);
+}
+
+.services-pro__asideStats{
+  display:grid;
+  gap: 10px;
+  margin: 6px 0 6px;
+}
+
+.stat{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.stat__num{
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(34,211,238,.12);
+  border: 1px solid rgba(34,211,238,.22);
+  color: rgba(34,211,238,.95);
+  font-weight: 1000;
+  flex: 0 0 auto;
+}
+
+.stat__text{
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.services-pro__asideSmall{
+  margin: 0;
+  color: var(--muted-2);
+  font-size: 12.5px;
+}
+
+/* RTL: make meta hint align properly */
+html[dir="rtl"] .services-pro__meta{
+  flex-direction: row-reverse;
+}
+html[dir="rtl"] .services-pro__hint{
+  text-align: left; /* keeps nice balance in RTL layout */
+}
+html[dir="rtl"] .service-item{
+  flex-direction: row-reverse;
+}
+html[dir="rtl"] .service-item__body{
+  text-align: right;
+}
+html[dir="rtl"] .services-pro__note{
+  flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .services-pro{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px){
+  .services-pro__grid{
+    grid-template-columns: 1fr;
+  }
+  .services-pro__hint{
+    text-align: left;
+  }
+}

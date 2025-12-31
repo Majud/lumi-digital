@@ -1,0 +1,14 @@
+@media (max-width: 980px){
+  .hero-grid{ grid-template-columns: 1fr; gap: 22px; }
+  .hero-cta{ width:100%; }
+}
+
+@media (max-width: 860px){
+  .section{ padding: 72px 0; }
+}
+
+@media (max-width: 720px){
+  .section{ padding: 60px 0; }
+  .hero{ padding: 72px 0 24px; }
+  .hero-media img{ aspect-ratio: 16 / 11; }
+}

@@ -1,97 +1,35 @@
-/* SECTION RHYTHM */
+
+/* ===========================
+   General sections
+   =========================== */
+
 .section{
-  position: relative;
-  padding: 96px 0;
-  background: var(--section-dark);
+  padding: 72px 0;
 }
-
-/* alternating surfaces */
-.section--dark{
-  background: var(--section-dark);
-}
-
 .section--soft{
-  background: var(--section-soft);
-  border-top: 1px solid var(--divider);
-  border-bottom: 1px solid var(--divider);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
 }
 
-.section::before{
-  content:"";
-  position:absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 1px;
-  background: linear-gradient(90deg,
-    transparent,
-    rgba(255,255,255,.08),
-    rgba(255,90,31,.2),
-    rgba(255,255,255,.08),
-    transparent
-  );
-  opacity:.7;
-  pointer-events:none;
-}
-
-.section::after{
-  content:"";
-  position:absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: linear-gradient(90deg,
-    transparent,
-    rgba(255,255,255,.06),
-    rgba(255,255,255,.12),
-    rgba(255,255,255,.06),
-    transparent
-  );
-  opacity:.5;
-  pointer-events:none;
-}
-
-.section.reveal{
-  opacity:0;
-  transform:translateY(24px);
-  transition:opacity .6s ease, transform .6s ease;
-}
-.section.reveal.in-view{
-  opacity:1;
-  transform:none;
-}
-
-@media (prefers-reduced-motion: reduce){
-  .section.reveal{
-    opacity:1;
-    transform:none;
-    transition:none;
-  }
-}
-
-/* section head styling */
 .section-head{
-  max-width: 820px;
-}
-.section-head.center{
-  margin-inline:auto;
+  margin-bottom: 26px;
+  max-width: 780px;
 }
 .section-kicker{
-  margin:0 0 10px;
-  color: rgba(255,255,255,.70);
+  color: rgba(34,211,238,.9);
   font-weight: 800;
-  letter-spacing: .6px;
+  letter-spacing: .16em;
   text-transform: uppercase;
   font-size: 12px;
+  margin: 0 0 10px;
+}
+.section-title{
+  margin: 0 0 10px;
+  font-size: 34px;
+  line-height: 1.12;
+  letter-spacing: -.02em;
 }
 .section-sub{
-  margin: 10px 0 0;
-  color: rgba(255,255,255,.70);
-  line-height: 1.75;
-}
-
-/* spacing between head and content */
-.section .section-head + *{
-  margin-top: 28px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
 }

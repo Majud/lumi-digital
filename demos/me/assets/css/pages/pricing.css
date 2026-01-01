@@ -1,47 +1,55 @@
 /* ===========================
-   PRICING – FINAL (PRO)
+   Pricing Section - standalone
    =========================== */
 
+:root{
+  --pricing-bg: #0b0d14;
+  --pricing-card: rgba(255,255,255,.06);
+  --pricing-card-strong: rgba(255,255,255,.08);
+  --pricing-border: rgba(255,255,255,.12);
+  --pricing-text: #eef2ff;
+  --pricing-muted: rgba(238,242,255,.7);
+  --pricing-accent-a: #22d3ee;
+  --pricing-accent-b: #7c3aed;
+  --pricing-shadow: 0 18px 50px rgba(0,0,0,.45);
+  --pricing-radius: 20px;
+}
+
 .pricing{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
   align-items: stretch;
 }
 
 .price{
   position: relative;
-  padding: 18px;
-  border-radius: var(--radius-lg);
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(14px);
-
+  padding: 20px;
+  border-radius: var(--pricing-radius);
+  background: linear-gradient(180deg, var(--pricing-card-strong), var(--pricing-card));
+  border: 1px solid var(--pricing-border);
+  box-shadow: var(--pricing-shadow);
+  color: var(--pricing-text);
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  backdrop-filter: blur(14px);
 }
-
-/* ---------------------------
-   Header
-   --------------------------- */
 
 .price__head{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-  margin-bottom: 14px;
+  text-align: left;
 }
 
 .price__title{
   margin: 0;
   font-size: 18px;
   font-weight: 800;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
 }
-
-/* ---------------------------
-   Price row (LEFT aligned)
-   --------------------------- */
 
 .price__value{
   width: 100%;
@@ -52,7 +60,6 @@
   margin: 0;
 }
 
-/* Old price – modern strike */
 .price__old{
   position: relative;
   display: inline-block;
@@ -60,10 +67,8 @@
   font-weight: 900;
   letter-spacing: .01em;
   color: rgba(148,163,184,.85);
-  opacity: .9;
 }
 
-/* custom strike line */
 .price__old::after{
   content: "";
   position: absolute;
@@ -72,28 +77,20 @@
   top: 55%;
   height: 2px;
   border-radius: 999px;
-
-  background: linear-gradient(
-    90deg,
-    rgba(167,139,250,.95),
-    rgba(34,211,238,.95)
-  );
-
-  box-shadow: 0 6px 18px rgba(34,211,238,.10);
+  background: linear-gradient(90deg, var(--pricing-accent-b), var(--pricing-accent-a));
+  box-shadow: 0 6px 18px rgba(34,211,238,.1);
   transform: rotate(-6deg);
 }
 
-/* New price – strong & premium */
 .price__new{
   font-size: 42px;
   line-height: 1;
   font-weight: 900;
-  letter-spacing: -.03em;
-  color: var(--text);
+  letter-spacing: -0.03em;
+  color: var(--pricing-text);
   text-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
-/* Deal label */
 .price__deal{
   margin: 4px 0 0;
   font-size: 12px;
@@ -104,24 +101,20 @@
   text-align: left;
 }
 
-/* ---------------------------
-   Feature list
-   --------------------------- */
-
 .price__list{
   list-style: none;
   padding: 0;
-  margin: 12px 0 16px;
+  margin: 14px 0 18px;
   display: grid;
   gap: 10px;
-  color: var(--muted);
+  color: var(--pricing-muted);
   font-weight: 700;
   font-size: 14px;
 }
 
 .price__list li{
-  padding-left: 18px;
   position: relative;
+  padding-left: 18px;
 }
 
 .price__list li::before{
@@ -130,39 +123,6 @@
   left: 4px;
   top: 0;
   color: rgba(34,211,238,.9);
-}
-
-/* ---------------------------
-   CTA alignment
-   --------------------------- */
-
-.price .btn{
-  margin-top: auto;
-}
-
-/* ---------------------------
-   MOST POPULAR
-   --------------------------- */
-
-.price--popular{
-  border-color: rgba(34,211,238,.28);
-  background: linear-gradient(
-    180deg,
-    rgba(34,211,238,.10),
-    rgba(124,58,237,.08)
-  );
-  transform: translateY(-6px);
-}
-
-.price--popular .price__new{
-  background: linear-gradient(
-    135deg,
-    var(--accent-b),
-    var(--accent-a)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .price__badge{
@@ -174,62 +134,86 @@
   font-size: 12px;
   font-weight: 900;
   color: #07101a;
-  background: linear-gradient(
-    135deg,
-    rgba(34,211,238,.95),
-    rgba(167,139,250,.92)
-  );
+  background: linear-gradient(135deg, rgba(34,211,238,.95), rgba(167,139,250,.92));
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.js.reveal-ready .price--popular .price__badge{
-  opacity: 0;
-  transform: scale(.92);
-  transition: opacity .45s ease, transform .45s ease;
-  transition-delay: 140ms;
+.price__badge-thumb{
+  width: 16px;
+  height: 16px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ffb454, #ff6b6b 45%, #6ee7ff);
+  box-shadow: 0 6px 12px rgba(7,16,26,.22);
+  border: 1px solid rgba(255,255,255,.55);
 }
 
-.js.reveal-ready .price--popular.is-visible .price__badge{
-  opacity: 1;
-  transform: scale(1);
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: var(--pricing-text);
+  font-weight: 800;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
 }
 
-/* ---------------------------
-   RTL support (Arabic)
-   --------------------------- */
+.btn:hover{ transform: translateY(-1px); }
 
-html[dir="rtl"] .price__head{
-  align-items: flex-end;
+.price .btn{
+  margin-top: auto;
+  width: 100%;
 }
 
-html[dir="rtl"] .price__value{
-  justify-content: flex-end;
+/* RTL - scoped to pricing only */
+html[dir="rtl"] .pricing .price__head{
+  align-items: flex-end !important;
+  text-align: right !important;
 }
 
-html[dir="rtl"] .price__deal{
-  text-align: right;
+html[dir="rtl"] .pricing .price__title,
+html[dir="rtl"] .pricing .price__value,
+html[dir="rtl"] .pricing .price__old,
+html[dir="rtl"] .pricing .price__new,
+html[dir="rtl"] .pricing .price__deal{
+  text-align: right !important;
 }
 
-html[dir="rtl"] .price__badge{
-  left: 14px;
-  right: auto;
+html[dir="rtl"] .pricing .price__value{
+  justify-content: flex-end !important;
 }
 
-html[dir="rtl"] .price__list li{
+html[dir="rtl"] .pricing .price__deal{
+  text-align: right !important;
+}
+
+html[dir="rtl"] .pricing .price__list li{
   padding-left: 0;
   padding-right: 18px;
 }
 
-html[dir="rtl"] .price__list li::before{
+html[dir="rtl"] .pricing .price__list li::before{
   left: auto;
   right: 4px;
 }
 
-/* ---------------------------
-   Responsive
-   --------------------------- */
+html[dir="rtl"] .pricing .price__badge{
+  right: auto;
+  left: 14px;
+}
+
+@media (max-width: 980px){
+  .pricing{ grid-template-columns: 1fr; }
+}
 
 @media (max-width: 760px){
-  .price__new{
-    font-size: 36px;
-  }
+  .price__new{ font-size: 36px; }
 }

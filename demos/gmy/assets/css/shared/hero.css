@@ -32,9 +32,11 @@
   color:rgba(233,238,246,.8);
   font-weight:600;
 }
-.kicker-dot{
-  width:10px;height:10px;border-radius:50%;
-  background:var(--accent);
+.kicker-logo{
+  width:18px;
+  height:18px;
+  object-fit:contain;
+  border-radius:4px;
   box-shadow:0 0 0 6px rgba(255,90,31,.14);
 }
 

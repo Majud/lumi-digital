@@ -1,17 +1,28 @@
 <!doctype html>
 <html lang="de" dir="ltr">
+    
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecting…</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#0b0d14" />
   <title>Lumi Digital - Websites that convert</title>
   <meta name="description" content="Lumi Digital builds modern, fast websites that generate inquiries for small businesses." />
   <script>document.documentElement.classList.add("js");</script>
 
-  <link rel="stylesheet" href="assets/css/pages/styles.css" />
-  <link rel="stylesheet" href="assets/css/pages/services.css" />
+  <link rel="stylesheet" href="assets/css/pages/contact.css" />
+  <link rel="stylesheet" href="assets/css/pages/demos.css" />
   <link rel="stylesheet" href="assets/css/pages/pricing.css" />
+  <link rel="stylesheet" href="assets/css/pages/services.css" />
+  <link rel="stylesheet" href="assets/css/pages/steps.css" />
+  <link rel="stylesheet" href="assets/css/shared/base.css" />
   <link rel="stylesheet" href="assets/css/shared/footer.css" />
+  <link rel="stylesheet" href="assets/css/shared/hero.css" />
+  <link rel="stylesheet" href="assets/css/shared/nav.css" />
+  <link rel="stylesheet" href="assets/css/shared/responsive.css" />
+  <link rel="stylesheet" href="assets/css/shared/sections.css" />
+  <link rel="stylesheet" href="assets/css/shared/styles.css" />
 </head>
 
 <body>
@@ -21,8 +32,8 @@
   <header class="header" id="top">
     <div class="container header__inner">
       <a class="brand" href="#top" aria-label="Lumi Digital">
-        <span class="brand__dot" aria-hidden="true"></span>
-        <span class="brand__text">Lumi Digital</span>
+        <img class="brand__logo" src="images/logo.png" alt="Lumi Digital logo" />
+        <span class="brand__name" data-i18n="header.brand">LUMI DIGITAL</span>
       </a>
 
       <nav class="nav" aria-label="Main navigation">
@@ -353,49 +364,35 @@
         <div class="section-head">
           <p class="section-kicker" data-i18n="demos.kicker">Demos / Portfolio</p>
           <h2 class="section-title" data-i18n="demos.title">Examples of how your site can look.</h2>
-          <p class="section-sub" data-i18n="demos.subtitle">
-            Replace these thumbnails later with real screenshots — the layout is ready.
-          </p>
+          
         </div>
 
         <div class="grid grid--3">
-          <article class="demo">
-            <div class="demo__thumb" role="img" aria-label="Demo thumbnail"></div>
-            <div class="demo__body">
-              <h3 class="demo__title" data-i18n="demos.d1.title">Barbershop / Friseur</h3>
-              <p class="demo__text" data-i18n="demos.d1.text">
-                Booking CTA, services, gallery, and Google Maps — perfect for local clients.
-              </p>
-              <div class="demo__actions">
-                <a class="btn btn--ghost btn--sm" href="#" data-i18n="demos.viewDemo">View demo</a>
-                <a class="btn btn--primary btn--sm" href="#contact" data-i18n="demos.getSimilar">Get a similar site</a>
-              </div>
-            </div>
-          </article>
+         
 
           <article class="demo">
-            <div class="demo__thumb" role="img" aria-label="Demo thumbnail"></div>
+            <div class="demo__thumb"><img class="demo__img" src="images/resturant.png" alt="Restaurant demo thumbnail" /></div>
             <div class="demo__body">
               <h3 class="demo__title" data-i18n="demos.d2.title">Restaurant</h3>
               <p class="demo__text" data-i18n="demos.d2.text">
                 Menu highlights, reservations, and a WhatsApp button for quick contact.
               </p>
               <div class="demo__actions">
-                <a class="btn btn--ghost btn--sm" href="#" data-i18n="demos.viewDemo">View demo</a>
+                <a class="btn btn--ghost btn--sm" href="../resturant/" data-i18n="demos.viewDemo">View demo</a>
                 <a class="btn btn--primary btn--sm" href="#contact" data-i18n="demos.getSimilar">Get a similar site</a>
               </div>
             </div>
           </article>
 
           <article class="demo">
-            <div class="demo__thumb" role="img" aria-label="Demo thumbnail"></div>
+            <div class="demo__thumb"><img class="demo__img" src="images/gym.png" alt="gym demo thumbnail" /></div>
             <div class="demo__body">
               <h3 class="demo__title" data-i18n="demos.d3.title">Fitness / Coaching</h3>
               <p class="demo__text" data-i18n="demos.d3.text">
                 Packages, testimonials, and strong CTAs that turn visitors into leads.
               </p>
               <div class="demo__actions">
-                <a class="btn btn--ghost btn--sm" href="#" data-i18n="demos.viewDemo">View demo</a>
+                <a class="btn btn--ghost btn--sm" href="../gmy/" data-i18n="demos.viewDemo">View demo</a>
                 <a class="btn btn--primary btn--sm" href="#contact" data-i18n="demos.getSimilar">Get a similar site</a>
               </div>
             </div>
@@ -619,3 +616,4 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+

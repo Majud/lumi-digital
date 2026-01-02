@@ -215,7 +215,7 @@
           "You review, I adjust - fast iterations with clear checkpoints.",
         "process.s4.title": "Launch",
         "process.s4.text":
-          "We go live - optimized, responsive, and ready to generate leads.",
+        "We launch your site live – optimized, responsive, and fully functional.",
 
         "contact.kicker": "Contact",
         "contact.title": "Ready to upgrade your website?",

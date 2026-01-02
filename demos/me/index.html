@@ -415,8 +415,7 @@
    <div class="grid grid--3 pricing">
 
   <!-- Starter (Most popular) -->
-  <article class="price price--popular" aria-label="Most popular">
-    <div class="price__badge" data-i18n="pricing.popular">Most popular</div>
+  <article class="price">
 
     <div class="price__head">
       <h3 class="price__title" data-i18n="pricing.starter.title">Starter</h3>
@@ -440,7 +439,9 @@
   </article>
 
   <!-- Business -->
-  <article class="price">
+  <article class="price price--popular" aria-label="Most popular">
+    <div class="price__badge" data-i18n="pricing.popular">Most popular</div>
+
     <div class="price__head">
       <h3 class="price__title" data-i18n="pricing.business.title">Business</h3>
 
@@ -503,39 +504,63 @@
           </p>
         </div>
 
-        <ol class="steps" role="list">
-          <li class="step">
-            <div class="step__num">1</div>
-            <div class="step__content">
-              <h3 class="step__title" data-i18n="process.s1.title">Free consultation</h3>
-              <p class="step__text" data-i18n="process.s1.text">We clarify goals, target audience, and what your site must achieve.</p>
+        <ol class="process" role="list">
+          <li class="process__item is-active">
+            <div class="process__icon" aria-hidden="true">
+              <img src="images/beratung.png" alt="Consultation" class="process__photo" loading="lazy"/>
             </div>
+
+
+            <div class="process__meta">
+              <p class="process__label" data-i18n="process.s1.title">Free consultation</p>
+              <p class="process__desc" data-i18n="process.s1.text">We clarify goals, target audience, and what your site must achieve.</p>
+            </div>
+            <span class="process__num" aria-label="Step 1">1</span>
           </li>
 
-          <li class="step">
-            <div class="step__num">2</div>
-            <div class="step__content">
-              <h3 class="step__title" data-i18n="process.s2.title">Design & structure</h3>
-              <p class="step__text" data-i18n="process.s2.text">I create a modern layout with clear sections and conversion flow.</p>
-            </div>
-          </li>
+          <li class="process__item">
+            <div class="process__icon" aria-hidden="true">
+              <img src="images/website.png" alt="website" class="process__photo" loading="lazy"/>
 
-          <li class="step">
-            <div class="step__num">3</div>
-            <div class="step__content">
-              <h3 class="step__title" data-i18n="process.s3.title">Feedback & revisions</h3>
-              <p class="step__text" data-i18n="process.s3.text">You review, I adjust — fast iterations with clear checkpoints.</p>
-            </div>
-          </li>
+              <line x1="8" y1="24" x2="56" y2="24" /> <line x1="22" y1="24" x2="22" y2="52" />
 
-          <li class="step">
-            <div class="step__num">4</div>
-            <div class="step__content">
-              <h3 class="step__title" data-i18n="process.s4.title">Launch</h3>
-              <p class="step__text" data-i18n="process.s4.text">We go live — optimized, responsive, and ready to generate leads.</p>
+              <path d="M42 18h8v-6h-8v6z" /> <path d="M50 15h3" /> <path d="M42 15h-2" /> </svg>
+
             </div>
-          </li>
-        </ol>
+
+
+    <div class="process__meta">
+      <p class="process__label" data-i18n="process.s2.title">Design & structure</p>
+      <p class="process__desc" data-i18n="process.s2.text">I create a modern layout with clear sections and conversion flow.</p>
+    </div>
+    <span class="process__num" aria-label="Step 2">2</span>
+  </li>
+
+  <li class="process__item">
+    <div class="process__icon" aria-hidden="true">
+      <img src="images/feedback.png" alt="Consultation" class="process__photo" loading="lazy"/>
+
+    </div>
+    <div class="process__meta">
+      <p class="process__label" data-i18n="process.s3.title">Feedback & revisions</p>
+      <p class="process__desc" data-i18n="process.s3.text">You review, I adjust — fast iterations with clear checkpoints.</p>
+    </div>
+    <span class="process__num" aria-label="Step 3">3</span>
+  </li>
+
+  <li class="process__item">
+    <div class="process__icon" aria-hidden="true">
+      <img src="images/leben.png" alt="Consultation" class="process__photo" loading="lazy"/>
+
+    </div>
+    <div class="process__meta">
+      <p class="process__label" data-i18n="process.s4.title">Launch</p>
+      <p class="process__desc" data-i18n="process.s4.text">We launch your site live – optimized, responsive, and fully functional.</p>
+    </div>
+    <span class="process__num" aria-label="Step 4">4</span>
+  </li>
+</ol>
+
       </div>
     </section>
 

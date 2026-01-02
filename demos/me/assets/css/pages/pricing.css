@@ -13,6 +13,10 @@
   --pricing-accent-a: #22d3ee;
   --pricing-accent-b: #7c3aed;
   --pricing-danger: #ff5c7a;
+  --pricing-brand-a: #44e7ff;
+  --pricing-brand-b: #6a6bff;
+  --pricing-brand-c: #a83bff;
+  --pricing-brand-d: #ff4fcb;
   --pricing-shadow: 0 18px 55px rgba(0,0,0,.55);
   --pricing-radius: 22px;
   --pricing-max: 1100px;
@@ -59,9 +63,48 @@
   opacity: .7;
 }
 
+.pricing .price--popular{
+  border-color: rgba(68,231,255,.4);
+  background:
+    radial-gradient(140% 140% at 0% 0%, rgba(68,231,255,.22), transparent 60%),
+    radial-gradient(140% 120% at 100% 0%, rgba(255,79,203,.25), transparent 58%),
+    linear-gradient(180deg, rgba(255,255,255,.2), rgba(255,255,255,.08));
+  box-shadow: 0 26px 70px rgba(68,231,255,.18), var(--pricing-shadow);
+}
+
+.pricing .price--popular::after{
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(var(--pricing-radius) + 1px);
+  border: 1px solid rgba(255,255,255,.2);
+  box-shadow: 0 0 30px rgba(255,79,203,.18), 0 0 26px rgba(68,231,255,.2);
+  pointer-events: none;
+}
+
 .pricing .price > *{
   position: relative;
   z-index: 1;
+}
+
+.pricing .price--popular{
+  border-color: rgba(34,211,238,.45);
+  background:
+    radial-gradient(140% 140% at 0% 0%, rgba(34,211,238,.2), transparent 60%),
+    radial-gradient(140% 140% at 100% 0%, rgba(124,58,237,.2), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+  box-shadow: 0 28px 70px rgba(34,211,238,.2), var(--pricing-shadow);
+  transform: translateY(-6px);
+}
+
+.pricing .price--popular::after{
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(var(--pricing-radius) + 1px);
+  border: 1px solid rgba(34,211,238,.45);
+  box-shadow: 0 0 28px rgba(34,211,238,.2);
+  pointer-events: none;
 }
 
 /* Head */
@@ -224,6 +267,25 @@
 /* Subtle focus */
 .pricing .btn:focus-visible{
   outline: 2px solid rgba(34,211,238,.55);
+  outline-offset: 2px;
+}
+
+.pricing .price--popular .btn{
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 0;
+  background: linear-gradient(90deg, var(--pricing-brand-a), var(--pricing-brand-b) 55%, var(--pricing-brand-c));
+  color: #0b0f17;
+  box-shadow: 0 16px 36px rgba(68,231,255,.25), 0 14px 30px rgba(167,139,250,.2);
+}
+
+.pricing .price--popular .btn:hover{
+  background: linear-gradient(90deg, #5af0ff, #7a6fff 55%, #b35bff);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35), 0 12px 24px rgba(68,231,255,.35);
+}
+
+.pricing .price--popular .btn:focus-visible{
+  outline: 2px solid rgba(68,231,255,.6);
   outline-offset: 2px;
 }
 

@@ -38,3 +38,33 @@
   color: var(--muted);
   font-size: 14px;
 }
+
+
+
+/* =========================
+   PROCESS – RTL ONLY (Arabic)
+   ========================= */
+
+/* Fix: keep RTL layout even if .step is display:flex elsewhere */
+html[dir="rtl"] #process .step{   /* ensure flex is active */
+  flex-direction: row-reverse !important; /* force number on the right */
+  
+  text-align: right !important;
+}
+
+/* Make sure the list itself doesn't get overridden */
+html[dir="rtl"] #process .steps{
+  direction: rtl !important;
+}
+
+/* Keep spacing correct in RTL */
+html[dir="rtl"] #process .step__num{
+  margin-left: 20px !important;
+  margin-right: 0 !important;
+}
+
+html[dir="rtl"] #process .step__content,
+html[dir="rtl"] #process .step__title,
+html[dir="rtl"] #process .step__text{
+  text-align: right !important;
+}

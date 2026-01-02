@@ -1,12 +1,16 @@
-/* ===========================
-   Lumi Digital — main interactions
-   - Mobile menu open/close
-   - Close menu on link click / Escape
-   - Set footer year
-   - Demo contact form handler
-   =========================== */
+/* ==========================================
+   app.js — Lumi Digital main interactions
+   - Footer year
+   - Mobile menu
+   - i18n (DE/EN/AR) + RTL dir switch
+   - Smooth scroll
+   - Reveal on scroll
+   - Scroll spy
+   ========================================== */
 
 (function () {
+  "use strict";
+
   function setYear() {
     const el = document.getElementById("year");
     if (!el) return;
@@ -59,39 +63,9 @@
     });
   }
 
-  function initContactForm() {
-    const form = document.getElementById("contactForm");
-    if (!form) return;
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      // Basic required field check (demo only)
-      const name = form.querySelector("#name");
-      const email = form.querySelector("#email");
-      const message = form.querySelector("#message");
-
-      const missing = [name, email, message].some((el) => !el.value.trim());
-      if (missing) {
-        // Keep it simple but clear; use browser native validity UI if possible
-        [name, email, message].forEach((el) => {
-          if (!el.value.trim()) el.setAttribute("aria-invalid", "true");
-          else el.removeAttribute("aria-invalid");
-        });
-        return;
-      }
-
-      [name, email, message].forEach((el) => el.removeAttribute("aria-invalid"));
-
-      const msg = (window.LUMI_T && window.LUMI_T("alerts.thanks")) || "Thank you!";
-      alert(msg);
-
-      form.reset();
-    });
-  }
-
   function initI18n() {
     const translations = {
+      // ---------- EN ----------
       en: {
         "a11y.skipToContent": "Skip to content",
         "nav.menu": "Menu",
@@ -102,6 +76,7 @@
         "nav.contact": "Contact",
         "nav.who": "Who it's for",
         "nav.why": "Why Lumi",
+
         "hero.kicker": "Lumi Digital • Web Design & Development",
         "hero.title": "Websites that convert - not just look good.",
         "hero.subtitle":
@@ -112,6 +87,7 @@
         "hero.badge1": "Mobile-first",
         "hero.badge2": "Performance",
         "hero.badge3": "SEO basics",
+
         "who.kicker": "Who it's for",
         "who.title": "Designed for people who need results.",
         "who.subtitle":
@@ -125,6 +101,7 @@
         "who.card3.title": "Freelancers & startups",
         "who.card3.text":
           "Modern brand presence, clean UI, and conversion-focused sections that sell.",
+
         "why.kicker": "Why Lumi Digital",
         "why.title": "Premium look. Practical results.",
         "why.subtitle":
@@ -141,6 +118,7 @@
         "why.b4.title": "SEO basics included",
         "why.b4.text":
           "Semantic structure, metadata, and best practices for discoverability.",
+
         "services.kicker": "Services",
         "services.title": "Everything you need to launch with confidence.",
         "services.subtitle":
@@ -151,17 +129,21 @@
         "services.item1": "Landing pages",
         "services.pro.t1": "Focused pages that push a single goal: inquiries.",
         "services.item2": "Business websites",
-        "services.pro.t2": "Multi-page sites with clear structure and trust sections.",
+        "services.pro.t2":
+          "Multi-page sites with clear structure and trust sections.",
         "services.item3": "Website redesigns",
         "services.pro.t3": "Modern UI refresh while keeping what already works.",
         "services.item4": "Performance & SEO basics",
-        "services.pro.t4": "Fast load times, clean HTML, metadata, and structure.",
+        "services.pro.t4":
+          "Fast load times, clean HTML, metadata, and structure.",
         "services.item5": "Contact forms & WhatsApp integration",
-        "services.pro.t5": "Easy contact options that reduce friction for clients.",
+        "services.pro.t5":
+          "Easy contact options that reduce friction for clients.",
         "services.item6": "Google Maps integration",
         "services.pro.t6": "Ideal for local businesses - visibility and trust.",
         "services.item7": "Hosting & domain setup (optional)",
-        "services.pro.t7": "If needed, I help you get everything online smoothly.",
+        "services.pro.t7":
+          "If needed, I help you get everything online smoothly.",
         "services.pro.note":
           "Need something specific? I can customize the scope after the free call.",
         "services.aside.kicker": "Fast & clear delivery",
@@ -174,11 +156,12 @@
         "services.aside.cta": "Book a free consultation",
         "services.aside.small":
           "No pressure - you'll get a clear recommendation and next steps.",
+
         "demos.kicker": "Demos / Portfolio",
         "demos.title": "Examples of how your site can look.",
         "demos.subtitle":
           "Replace these thumbnails later with real screenshots - the layout is ready.",
-        "demos.d1.title": "Barbershop / Friseur",
+        "demos.d1.title": "Barbershop / Hairdresser",
         "demos.d1.text":
           "Booking CTA, services, gallery, and Google Maps - perfect for local clients.",
         "demos.d2.title": "Restaurant",
@@ -189,6 +172,7 @@
           "Packages, testimonials, and strong CTAs that turn visitors into leads.",
         "demos.viewDemo": "View demo",
         "demos.getSimilar": "Get a similar site",
+
         "pricing.kicker": "Pricing",
         "pricing.title": "Clear packages. No surprises.",
         "pricing.subtitle":
@@ -215,6 +199,7 @@
         "pricing.premium.p4": "3 revision rounds",
         "pricing.premium.p5": "14 days post-launch support",
         "pricing.cta": "Book a free consultation",
+
         "process.kicker": "Process",
         "process.title": "Simple steps. Clean delivery.",
         "process.subtitle":
@@ -231,6 +216,7 @@
         "process.s4.title": "Launch",
         "process.s4.text":
           "We go live - optimized, responsive, and ready to generate leads.",
+
         "contact.kicker": "Contact",
         "contact.title": "Ready to upgrade your website?",
         "contact.subtitle":
@@ -245,13 +231,14 @@
         "contact.form.emailLabel": "Email",
         "contact.form.messageLabel": "Message",
         "contact.form.submit": "Send message",
-        "contact.form.trust":
-          "This form is a frontend demo (no backend). Connect it later to email or a CRM.",
+        "contact.form.trust": "I usually reply within 24 hours. Your message stays private.",
         "footer.brand": "Lumi Digital",
         "footer.impressum": "Imprint",
         "footer.privacy": "Privacy",
         "alerts.thanks": "Thank you!"
       },
+
+      // ---------- DE ----------
       de: {
         "a11y.skipToContent": "Zum Inhalt springen",
         "nav.menu": "Menü",
@@ -262,6 +249,7 @@
         "nav.contact": "Kontakt",
         "nav.who": "Für wen",
         "nav.why": "Warum Lumi",
+
         "hero.kicker": "Lumi Digital • Webdesign & Entwicklung",
         "hero.title": "Websites, die konvertieren - nicht nur gut aussehen.",
         "hero.subtitle":
@@ -272,6 +260,7 @@
         "hero.badge1": "Mobile-first",
         "hero.badge2": "Performance",
         "hero.badge3": "SEO-Basics",
+
         "who.kicker": "Für wen",
         "who.title": "Für Menschen, die Ergebnisse brauchen.",
         "who.subtitle":
@@ -285,6 +274,7 @@
         "who.card3.title": "Freelancer & Startups",
         "who.card3.text":
           "Moderner Markenauftritt, sauberes UI und conversion-starke Bereiche, die verkaufen.",
+
         "why.kicker": "Warum Lumi Digital",
         "why.title": "Premium-Look. Praktische Ergebnisse.",
         "why.subtitle":
@@ -301,6 +291,7 @@
         "why.b4.title": "SEO-Basics inklusive",
         "why.b4.text":
           "Semantische Struktur, Metadaten und Best Practices für Sichtbarkeit.",
+
         "services.kicker": "Leistungen",
         "services.title": "Alles, was du brauchst, um sicher zu starten.",
         "services.subtitle":
@@ -322,8 +313,7 @@
         "services.pro.t6": "Ideal für lokale Unternehmen - Sichtbarkeit und Vertrauen.",
         "services.item7": "Hosting & Domain-Setup (optional)",
         "services.pro.t7": "Wenn gewünscht, helfe ich dir, alles sauber online zu bringen.",
-        "services.pro.note":
-          "Du brauchst etwas Spezielles? Ich passe den Umfang nach dem Call an.",
+        "services.pro.note": "Du brauchst etwas Spezielles? Ich passe den Umfang nach dem Call an.",
         "services.aside.kicker": "Schnelle & klare Lieferung",
         "services.aside.title": "Schnell fertig?",
         "services.aside.text":
@@ -332,8 +322,8 @@
         "services.aside.s2": "Modernes UI",
         "services.aside.s3": "Conversion-ready",
         "services.aside.cta": "Kostenlose Beratung buchen",
-        "services.aside.small":
-          "Kein Druck - du bekommst eine klare Empfehlung und nächste Schritte.",
+        "services.aside.small": "Kein Druck - du bekommst eine klare Empfehlung und nächste Schritte.",
+
         "demos.kicker": "Demos / Portfolio",
         "demos.title": "Beispiele, wie deine Website aussehen kann.",
         "demos.subtitle":
@@ -349,6 +339,7 @@
           "Pakete, Testimonials und starke CTAs, die Besucher zu Leads machen.",
         "demos.viewDemo": "Demo ansehen",
         "demos.getSimilar": "Ähnliche Website erhalten",
+
         "pricing.kicker": "Preise",
         "pricing.title": "Klare Pakete. Keine Überraschungen.",
         "pricing.subtitle":
@@ -375,6 +366,7 @@
         "pricing.premium.p4": "3 Korrekturrunden",
         "pricing.premium.p5": "14 Tage Support nach Launch",
         "pricing.cta": "Kostenlose Beratung buchen",
+
         "process.kicker": "Ablauf",
         "process.title": "Einfache Schritte. Saubere Lieferung.",
         "process.subtitle":
@@ -391,6 +383,7 @@
         "process.s4.title": "Launch",
         "process.s4.text":
           "Wir gehen live - optimiert, responsiv und bereit für Leads.",
+
         "contact.kicker": "Kontakt",
         "contact.title": "Bereit, deine Website aufzuwerten?",
         "contact.subtitle":
@@ -405,13 +398,14 @@
         "contact.form.emailLabel": "E-Mail",
         "contact.form.messageLabel": "Nachricht",
         "contact.form.submit": "Nachricht senden",
-        "contact.form.trust":
-          "Dieses Formular ist eine Frontend-Demo (kein Backend). Später an E-Mail oder CRM anbinden.",
+        "contact.form.trust": "Ich antworte normalerweise innerhalb von 24 Stunden. Deine Nachricht bleibt privat.",
         "footer.brand": "Lumi Digital",
         "footer.impressum": "Impressum",
         "footer.privacy": "Datenschutz",
         "alerts.thanks": "Danke!"
       },
+
+      // ---------- AR ----------
       ar: {
         "a11y.skipToContent": "تخطي إلى المحتوى",
         "nav.menu": "القائمة",
@@ -422,6 +416,7 @@
         "nav.contact": "تواصل",
         "nav.who": "لمن هذا؟",
         "nav.why": "لماذا لومي",
+
         "hero.kicker": "Lumi Digital • تصميم وتطوير الويب",
         "hero.title": "مواقع تحول الزوار إلى عملاء - وليست مجرد شكل جميل.",
         "hero.subtitle":
@@ -432,19 +427,20 @@
         "hero.badge1": "تصميم للهواتف أولًا",
         "hero.badge2": "الأداء",
         "hero.badge3": "أساسيات SEO",
+
         "who.kicker": "لمن هذا؟",
         "who.title": "مصمم لمن يحتاج نتائج حقيقية.",
         "who.subtitle":
           "إذا كان موقعك يجب أن يجلب لك استفسارات وثقة، فأنت في المكان الصحيح.",
         "who.card1.title": "الأعمال الصغيرة",
-        "who.card1.text":
-          "موقع قوي بمظهر احترافي يحول الزوار إلى عملاء.",
+        "who.card1.text": "موقع قوي بمظهر احترافي يحول الزوار إلى عملاء.",
         "who.card2.title": "الخدمات المحلية",
         "who.card2.text":
           "عروض واضحة، دمج خرائط Google، وطريقة سريعة للتواصل.",
         "who.card3.title": "مستقلون وشركات ناشئة",
         "who.card3.text":
           "حضور علامة حديث، واجهات نظيفة، وأقسام تركز على التحويل.",
+
         "why.kicker": "لماذا Lumi Digital",
         "why.title": "مظهر فاخر. نتائج عملية.",
         "why.subtitle":
@@ -461,6 +457,7 @@
         "why.b4.title": "أساسيات SEO مدمجة",
         "why.b4.text":
           "بنية دلالية وبيانات وصفية وأفضل الممارسات للظهور.",
+
         "services.kicker": "الخدمات",
         "services.title": "كل ما تحتاجه لإطلاق بثقة.",
         "services.subtitle":
@@ -471,13 +468,15 @@
         "services.item1": "صفحات هبوط",
         "services.pro.t1": "صفحات مركزة بهدف واحد: الاستفسارات.",
         "services.item2": "مواقع أعمال",
-        "services.pro.t2": "مواقع متعددة الصفحات مع هيكل واضح وأقسام ثقة.",
+        "services.pro.t2":
+          "مواقع متعددة الصفحات مع هيكل واضح وأقسام ثقة.",
         "services.item3": "إعادة تصميم المواقع",
         "services.pro.t3": "تحديث واجهة حديث مع الحفاظ على ما يعمل.",
         "services.item4": "الأداء وأساسيات SEO",
         "services.pro.t4": "سرعة تحميل، HTML نظيف، بيانات وصفية وهيكل واضح.",
         "services.item5": "نماذج تواصل ودمج واتساب",
-        "services.pro.t5": "خيارات تواصل سهلة تقلل الاحتكاك للعملاء.",
+        "services.pro.t5":
+          "خيارات تواصل سهلة تقلل الاحتكاك للعملاء.",
         "services.item6": "دمج خرائط Google",
         "services.pro.t6": "مثالي للأعمال المحلية - رؤية وثقة.",
         "services.item7": "إعداد الاستضافة والنطاق (اختياري)",
@@ -494,13 +493,13 @@
         "services.aside.cta": "احجز استشارة مجانية",
         "services.aside.small":
           "بدون ضغط - ستحصل على توصية واضحة والخطوات التالية.",
+
         "demos.kicker": "نماذج / أعمال",
         "demos.title": "أمثلة لشكل موقعك.",
-        "demos.subtitle":
-          "استبدل هذه الصور لاحقًا بلقطات حقيقية - التصميم جاهز.",
+        "demos.subtitle": "استبدل هذه الصور لاحقًا بلقطات حقيقية - التصميم جاهز.",
         "demos.d1.title": "صالون حلاقة / حلاق",
         "demos.d1.text":
-          "دعوة للحجز، خدمات، معرض، وخرائط Google - مثالي للعملاء المحليين.",
+          "زر حجز، خدمات، معرض، وخرائط Google - مثالي للعملاء المحليين.",
         "demos.d2.title": "مطعم",
         "demos.d2.text":
           "أبرز الأطباق، حجوزات، وزر واتساب للتواصل السريع.",
@@ -509,6 +508,7 @@
           "باقات، شهادات، ونداءات قوية لتحويل الزوار إلى عملاء.",
         "demos.viewDemo": "عرض النموذج",
         "demos.getSimilar": "احصل على موقع مشابه",
+
         "pricing.kicker": "الأسعار",
         "pricing.title": "باقات واضحة. بدون مفاجآت.",
         "pricing.subtitle": "اختر باقة تناسب عملك اليوم - وتوسع لاحقًا.",
@@ -534,26 +534,23 @@
         "pricing.premium.p4": "3 جولات تعديل",
         "pricing.premium.p5": "دعم لمدة 14 يومًا بعد الإطلاق",
         "pricing.cta": "احجز استشارة مجانية",
+
         "process.kicker": "الخطوات",
         "process.title": "خطوات بسيطة. تسليم نظيف.",
         "process.subtitle":
           "سير عمل واضح للتسليم بسرعة دون التضحية بالجودة.",
         "process.s1.title": "استشارة مجانية",
-        "process.s1.text":
-          "نحدد الأهداف والجمهور وما يجب أن يحققه الموقع.",
+        "process.s1.text": "نحدد الأهداف والجمهور وما يجب أن يحققه الموقع.",
         "process.s2.title": "التصميم والهيكل",
-        "process.s2.text":
-          "أصمم تخطيطًا حديثًا بأقسام واضحة وتدفق تحويل.",
+        "process.s2.text": "أصمم تخطيطًا حديثًا بأقسام واضحة وتدفق تحويل.",
         "process.s3.title": "ملاحظات وتعديلات",
-        "process.s3.text":
-          "تراجع وتقدم ملاحظات، وأنا أعدّل بسرعة.",
+        "process.s3.text": "تراجع وتقدم ملاحظات، وأنا أعدّل بسرعة.",
         "process.s4.title": "الإطلاق",
-        "process.s4.text":
-          "نطلق الموقع - محسن ومتجاوب وجاهز لجلب العملاء.",
+        "process.s4.text": "نطلق الموقع - محسن ومتجاوب وجاهز لجلب العملاء.",
+
         "contact.kicker": "تواصل",
         "contact.title": "جاهز لتطوير موقعك؟",
-        "contact.subtitle":
-          "أرسل رسالة وسأرد عليك بالخطوات التالية وخطة واضحة.",
+        "contact.subtitle": "أرسل رسالة وسأرد عليك بالخطوات التالية وخطة واضحة.",
         "contact.panel.title": "استشارة مجانية",
         "contact.panel.text":
           "أخبرني عن عملك وما تريد تحقيقه - وسأقترح أفضل باقة.",
@@ -564,8 +561,7 @@
         "contact.form.emailLabel": "البريد الإلكتروني",
         "contact.form.messageLabel": "الرسالة",
         "contact.form.submit": "إرسال الرسالة",
-        "contact.form.trust":
-          "هذا النموذج تجريبي (بدون باك-إند). يمكن ربطه لاحقًا بالبريد أو CRM.",
+        "contact.form.trust": "عادةً أرد خلال 24 ساعة. رسالتك تبقى خاصة.",
         "footer.brand": "Lumi Digital",
         "footer.impressum": "بيانات قانونية",
         "footer.privacy": "الخصوصية",
@@ -575,56 +571,64 @@
 
     const getText = (lang, key) =>
       (translations[lang] && translations[lang][key]) ||
-      (translations.en && translations.en[key]);
+      (translations.en && translations.en[key]) ||
+      "";
 
-    const setLang = (lang) => {
-      const safeLang = translations[lang] ? lang : "en";
+    const applyLang = (lang) => {
+      const safe = translations[lang] ? lang : "en";
       const html = document.documentElement;
-      html.lang = safeLang;
-      html.dir = safeLang === "ar" ? "rtl" : "ltr";
 
+      html.lang = safe;
+      html.dir = safe === "ar" ? "rtl" : "ltr";
+
+      // Update text nodes
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.getAttribute("data-i18n");
-        const value = getText(safeLang, key);
+        const value = getText(safe, key);
         if (value) el.textContent = value;
       });
 
+      // Update placeholders
       document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
         const key = el.getAttribute("data-i18n-placeholder");
-        const value = getText(safeLang, key);
+        const value = getText(safe, key);
         if (value) el.setAttribute("placeholder", value);
       });
 
+      // Active button state
       document.querySelectorAll(".lang__btn").forEach((btn) => {
-        btn.classList.toggle("is-active", btn.dataset.lang === safeLang);
+        btn.classList.toggle("is-active", btn.dataset.lang === safe);
       });
 
+      // Persist
       try {
-        localStorage.setItem("lumiLang", safeLang);
+        localStorage.setItem("lumiLang", safe);
       } catch (_) {}
     };
 
-    window.LUMI_T = (key) => getText(document.documentElement.lang || "en", key);
+    // Expose translator for other scripts (EmailJS etc.)
+    window.LUMI_T = (key) => {
+      const lang = document.documentElement.lang || "en";
+      return getText(lang, key);
+    };
 
-    const stored = (() => {
-      try {
-        return localStorage.getItem("lumiLang");
-      } catch (_) {
-        return null;
-      }
-    })();
+    // Init from storage
+    let stored = null;
+    try {
+      stored = localStorage.getItem("lumiLang");
+    } catch (_) {}
 
-    setLang(stored || document.documentElement.lang || "en");
+    applyLang(stored || document.documentElement.lang || "en");
 
+    // Bind buttons (desktop + mobile)
     document.querySelectorAll(".lang__btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const lang = btn.dataset.lang || "en";
-        setLang(lang);
+        applyLang(lang);
       });
     });
   }
 
-  // Optional: smooth scroll fallback for older browsers
   function initSmoothScroll() {
     document.querySelectorAll("a[href^='#']").forEach((a) => {
       a.addEventListener("click", (e) => {
@@ -651,6 +655,7 @@
 
   function initScrollReveal() {
     document.documentElement.classList.add("reveal-ready");
+
     const selector = [
       ".hero__content > *",
       ".hero__visual",
@@ -701,7 +706,9 @@
   }
 
   function initScrollSpy() {
-    const navLinks = Array.from(document.querySelectorAll(".nav__link, .mobile__link"));
+    const navLinks = Array.from(
+      document.querySelectorAll(".nav__link, .mobile__link")
+    );
     if (!navLinks.length) return;
 
     const sectionMap = new Map();
@@ -715,7 +722,7 @@
       sectionMap.get(id).links.push(link);
     });
 
-    const sections = Array.from(sectionMap.values()).map((entry) => entry.section);
+    const sections = Array.from(sectionMap.values()).map((x) => x.section);
     if (!sections.length) return;
 
     const setActive = (id) => {
@@ -734,17 +741,18 @@
     const updateActive = () => {
       const scrollPos = window.scrollY + getOffset();
       let currentId = null;
+
       sections.forEach((section) => {
         const top = section.offsetTop;
         const bottom = top + section.offsetHeight;
-        if (scrollPos >= top && scrollPos < bottom) {
-          currentId = section.id;
-        }
+        if (scrollPos >= top && scrollPos < bottom) currentId = section.id;
       });
+
       if (!currentId) {
-        const lastSection = sections[sections.length - 1];
-        if (scrollPos >= lastSection.offsetTop) currentId = lastSection.id;
+        const last = sections[sections.length - 1];
+        if (scrollPos >= last.offsetTop) currentId = last.id;
       }
+
       setActive(currentId);
     };
 
@@ -760,18 +768,17 @@
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+
     navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        setTimeout(updateActive, 0);
-      });
+      link.addEventListener("click", () => setTimeout(updateActive, 0));
     });
+
     updateActive();
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     setYear();
     initMobileMenu();
-    initContactForm();
     initI18n();
     initSmoothScroll();
     initScrollReveal();

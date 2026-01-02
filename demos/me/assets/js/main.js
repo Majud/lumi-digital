@@ -1,23 +1,54 @@
-// Contact form (EmailJS)
+/* ==========================================
+   main.js — Contact form (EmailJS)
+   - Sends form via EmailJS
+   - Uses translated alerts via window.LUMI_T
+   ========================================== */
+
 (function () {
+  "use strict";
+
   const form = document.getElementById("contactForm");
   if (!form) return;
 
-  // 1) EmailJS init
-  const PUBLIC_KEY = "skNWDK3Stcb3TfJzy";
-  const SERVICE_ID = "service_tgaf1os";
-  const TEMPLATE_ID = "template_8pjekl4";
-
-  // Safety: check EmailJS loaded
+  // Make sure EmailJS script is loaded
   if (!window.emailjs) {
     console.warn("EmailJS not loaded. Did you include the CDN script?");
     return;
   }
 
-  emailjs.init(PUBLIC_KEY);
+  // Your EmailJS keys
+  const PUBLIC_KEY = "skNWDK3Stcb3TfJzy";
+  const SERVICE_ID = "service_tgaf1os";
+  const TEMPLATE_ID = "template_8pjekl4";
+
+  // init
+  try {
+    window.emailjs.init(PUBLIC_KEY);
+  } catch (e) {
+    console.error("EmailJS init failed:", e);
+    return;
+  }
+
+  // Simple required validation
+  function markInvalid(el, invalid) {
+    if (!el) return;
+    if (invalid) el.setAttribute("aria-invalid", "true");
+    else el.removeAttribute("aria-invalid");
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    const name = form.querySelector("#name");
+    const email = form.querySelector("#email");
+    const message = form.querySelector("#message");
+
+    const missing = [name, email, message].some((el) => !el || !el.value.trim());
+    markInvalid(name, !name.value.trim());
+    markInvalid(email, !email.value.trim());
+    markInvalid(message, !message.value.trim());
+
+    if (missing) return;
 
     const submitBtn = form.querySelector('button[type="submit"]');
     const oldText = submitBtn ? submitBtn.textContent : "";
@@ -28,10 +59,14 @@
         submitBtn.textContent = "Sending...";
       }
 
-      // 2) sendForm sends all inputs by their "name"
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form);
+      await window.emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form);
 
-      const msg =\r\n        (window.LUMI_T && window.LUMI_T("alerts.thanks")) ||\r\n        "Danke! Deine Nachricht wurde gesendet.";\r\n      alert(msg);\r\n      form.reset();
+      const msg =
+        (window.LUMI_T && window.LUMI_T("alerts.thanks")) ||
+        "Danke! Deine Nachricht wurde gesendet.";
+      alert(msg);
+
+      form.reset();
     } catch (err) {
       console.error("EmailJS error:", err);
       alert("Ups — das Senden hat nicht funktioniert. Bitte versuch es nochmal.");
@@ -43,4 +78,3 @@
     }
   });
 })();
-

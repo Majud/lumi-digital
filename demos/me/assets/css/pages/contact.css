@@ -128,7 +128,7 @@
 
 .textarea{
   resize: vertical;
-  min-height: 200px;
+  min-height: 240px;
 }
 
 .input::placeholder,
@@ -143,6 +143,38 @@
   border-color: rgba(34,211,238,.45);
   background: rgba(255,255,255,.05);
   box-shadow: 0 0 0 3px rgba(34,211,238,.15);
+}
+
+/* Custom validation */
+.input[aria-invalid="true"],
+.textarea[aria-invalid="true"]{
+  border-color: var(--danger);
+  background: rgba(251,113,133,.08);
+  box-shadow: 0 0 0 3px rgba(251,113,133,.18);
+}
+.input[aria-invalid="true"]:focus,
+.textarea[aria-invalid="true"]:focus{
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(251,113,133,.24);
+}
+
+.form__error{
+  margin: 8px 0 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(251,113,133,.45);
+  background: rgba(251,113,133,.12);
+  color: #fecdd3;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.form__note{
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--muted);
 }
 
 /* Trust line */

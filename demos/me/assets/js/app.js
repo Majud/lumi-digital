@@ -80,7 +80,8 @@
         "hero.kicker": "Lumi Digital • Web Design & Development",
         "hero.title": "Websites that convert - not just look good.",
         "hero.subtitle":
-          "I build fast, modern websites for small businesses that want more inquiries, more trust, and a stronger online presence.",
+          "Fast, modern websites that drive inquiries and trust.",
+        "hero.proof": "Built for local businesses & startups.",
         "hero.ctaPrimary": "Book a free consultation",
         "hero.ctaSecondary": "View packages",
         "hero.trustLine": "Fast delivery • Clear pricing • Personal support",
@@ -104,8 +105,7 @@
 
         "why.kicker": "Why Lumi Digital",
         "why.title": "Premium look. Practical results.",
-        "why.subtitle":
-          "I focus on speed, clarity, and persuasion - so your website does its job.",
+        "why.subtitle": "Fast. Clear. Persuasive.",
         "why.b1.title": "Conversion-focused",
         "why.b1.text":
           "Clear structure, strong CTAs, and trust elements that help visitors act.",
@@ -156,6 +156,16 @@
         "services.aside.cta": "Book a free consultation",
         "services.aside.small":
           "No pressure - you'll get a clear recommendation and next steps.",
+        "aftercare.kicker": "Aftercare (optional)",
+        "aftercare.title": "Peace of mind after launch",
+        "aftercare.subtitle": "I keep your site stable and updated so you can focus on your business.",
+        "aftercare.b1": "Small changes",
+        "aftercare.b2": "Technical checkups",
+        "aftercare.b3": "Support when questions come up",
+        "aftercare.price": "49 € / month or 499 € / year",
+        "aftercare.cta": "Request aftercare",
+        "aftercare.trust": "No sales pressure. Cancel anytime.",
+
 
         "demos.kicker": "Demos / Portfolio",
         "demos.title": "Examples of how your site can look.",
@@ -167,11 +177,14 @@
         "demos.d2.title": "Restaurant",
         "demos.d2.text":
           "Menu highlights, reservations, and a WhatsApp button for quick contact.",
+        "demos.d2.result": "Optimized for more local inquiries.",
         "demos.d3.title": "Fitness / Coaching",
         "demos.d3.text":
           "Packages, testimonials, and strong CTAs that turn visitors into leads.",
+        "demos.d3.result": "Lead-focused structure with clear CTAs.",
+        "demos.d4.result": "Trust-building with fast contact paths.",
         "demos.viewDemo": "View demo",
-        "demos.getSimilar": "Get a similar site",
+        "demos.getSimilar": "Book a free consultation",
 
         "pricing.kicker": "Pricing",
         "pricing.title": "Clear packages. No surprises.",
@@ -179,31 +192,39 @@
           "Choose a package that fits your business today - and scale later.",
         "pricing.popular": "Most popular",
         "pricing.starter.title": "Starter",
+        "pricing.starter.tagline": "Fast online & professional",
         "pricing.business.title": "Business",
+        "pricing.business.tagline": "More inquiries, more trust",
         "pricing.premium.title": "Premium",
+        "pricing.premium.tagline": "Strong presence & long-term impact",
         "pricing.deal.newyear": "New Year offer",
-        "pricing.starter.p1": "1 landing page",
-        "pricing.starter.p2": "Mobile-optimized design",
-        "pricing.starter.p3": "Contact form or WhatsApp CTA",
-        "pricing.starter.p4": "Basic SEO (titles, structure, meta)",
-        "pricing.starter.p5": "1 revision round",
-        "pricing.business.p1": "Up to 5 pages",
-        "pricing.business.p2": "Conversion-optimized structure",
-        "pricing.business.p3": "Performance optimization",
-        "pricing.business.p4": "SEO basics",
-        "pricing.business.p5": "2 revision rounds",
-        "pricing.business.p6": "Contact forms & integrations",
-        "pricing.premium.p1": "Up to 8 pages",
-        "pricing.premium.p2": "Premium UI & subtle animations",
-        "pricing.premium.p3": "Advanced SEO basics",
-        "pricing.premium.p4": "3 revision rounds",
-        "pricing.premium.p5": "14 days post-launch support",
+        "pricing.starter.p1": "Ideal for solo entrepreneurs",
+        "pricing.starter.p2": "Professional one-page website",
+        "pricing.starter.p3": "Perfect on phone & tablet",
+        "pricing.starter.p4": "Contact form or WhatsApp button",
+        "pricing.starter.p5": "Google basic optimization (SEO)",
+        "pricing.starter.p6": "1 revision round",
+        "pricing.starter.p7": "Ready in about 7-14 days",
+        "pricing.business.p1": "Ideal for growing businesses",
+        "pricing.business.p2": "Up to 5 pages (Home, Services, About, Contact ...)",
+        "pricing.business.p3": "Conversion-optimized structure (more inquiries)",
+        "pricing.business.p4": "Fast load times & performance optimization",
+        "pricing.business.p5": "SEO basics for multiple pages",
+        "pricing.business.p6": "Forms & integrations",
+        "pricing.business.p7": "2 revision rounds",
+        "pricing.business.p8": "Ready in about 7-14 days",
+        "pricing.premium.p1": "Ideal for established brands",
+        "pricing.premium.p2": "Up to 8 pages",
+        "pricing.premium.p3": "Premium design with subtle animations",
+        "pricing.premium.p4": "Advanced SEO optimization (structure & metadata)",
+        "pricing.premium.p5": "3 revision rounds",
+        "pricing.premium.p6": "14 days support after launch",
+        "pricing.premium.p7": "Ready in about 7-14 days",
         "pricing.cta": "Book a free consultation",
 
         "process.kicker": "Process",
         "process.title": "Simple steps. Clean delivery.",
-        "process.subtitle":
-          "A clear workflow to deliver fast without sacrificing quality.",
+        "process.subtitle": "A clear workflow for fast, reliable delivery.",
         "process.s1.title": "Free consultation",
         "process.s1.text":
           "We clarify goals, target audience, and what your site must achieve.",
@@ -235,6 +256,7 @@
         "contact.form.emailLabel": "Email",
         "contact.form.messageLabel": "Message",
         "contact.form.submit": "Send message",
+        "contact.form.note": "No sales call. Just clear guidance.",
         "contact.form.trust": "I usually reply within 24 hours. Your message stays private.",
         "footer.brand": "Lumi Digital",
         "footer.impressum": "Imprint",
@@ -257,7 +279,8 @@
         "hero.kicker": "Lumi Digital • Webdesign & Entwicklung",
         "hero.title": "Websites, die konvertieren - nicht nur gut aussehen.",
         "hero.subtitle":
-          "Ich baue schnelle, moderne Websites für kleine Unternehmen, die mehr Anfragen, mehr Vertrauen und eine stärkere Online-Präsenz wollen.",
+          "Schnelle, moderne Websites fuer mehr Anfragen und Vertrauen.",
+        "hero.proof": "Fuer lokale Unternehmen & Startups gemacht.",
         "hero.ctaPrimary": "Kostenlose Beratung buchen",
         "hero.ctaSecondary": "Pakete ansehen",
         "hero.trustLine": "Schnelle Lieferung • Klare Preise • Persönlicher Support",
@@ -282,7 +305,7 @@
         "why.kicker": "Warum Lumi Digital",
         "why.title": "Premium-Look. Praktische Ergebnisse.",
         "why.subtitle":
-          "Ich fokussiere auf Geschwindigkeit, Klarheit und Überzeugung - damit deine Website ihren Job macht.",
+          "Schnell. Klar. Ueberzeugend.",
         "why.b1.title": "Conversion-fokussiert",
         "why.b1.text":
           "Klare Struktur, starke CTAs und Trust-Elemente, die Besucher handeln lassen.",
@@ -327,6 +350,15 @@
         "services.aside.s3": "Conversion-ready",
         "services.aside.cta": "Kostenlose Beratung buchen",
         "services.aside.small": "Kein Druck - du bekommst eine klare Empfehlung und nächste Schritte.",
+        "aftercare.kicker": "Nachbetreuung (optional)",
+        "aftercare.title": "Sorgenfrei nach dem Launch",
+        "aftercare.subtitle": "Ich halte deine Website stabil und aktuell, damit du dich auf dein Business konzentrieren kannst.",
+        "aftercare.b1": "Kleine Änderungen",
+        "aftercare.b2": "Technische Checks",
+        "aftercare.b3": "Support bei Fragen",
+        "aftercare.price": "49 € / Monat oder 499 € / Jahr",
+        "aftercare.cta": "Nachbetreuung anfragen",
+        "aftercare.trust": "Kein Verkaufsdruck. Jederzeit kündbar.",
 
         "demos.kicker": "Demos / Portfolio",
         "demos.title": "Beispiele, wie deine Website aussehen kann.",
@@ -338,11 +370,14 @@
         "demos.d2.title": "Restaurant",
         "demos.d2.text":
           "Menü-Highlights, Reservierungen und ein WhatsApp-Button für schnellen Kontakt.",
+        "demos.d2.result": "Optimiert fuer mehr lokale Anfragen.",
         "demos.d3.title": "Fitness / Coaching",
         "demos.d3.text":
           "Pakete, Testimonials und starke CTAs, die Besucher zu Leads machen.",
+        "demos.d3.result": "Lead-fokussierte Struktur mit klaren CTAs.",
+        "demos.d4.result": "Vertrauensaufbau + schnelle Kontaktaufnahme.",
         "demos.viewDemo": "Demo ansehen",
-        "demos.getSimilar": "Ähnliche Website erhalten",
+        "demos.getSimilar": "Kostenlose Beratung buchen",
 
         "pricing.kicker": "Preise",
         "pricing.title": "Klare Pakete. Keine Überraschungen.",
@@ -350,31 +385,40 @@
           "Wähle ein Paket, das heute zu deinem Business passt - skalieren kannst du später.",
         "pricing.popular": "Bestseller",
         "pricing.starter.title": "Starter",
+        "pricing.starter.tagline": "Schnell online & professionell",
         "pricing.business.title": "Business",
+        "pricing.business.tagline": "Mehr Anfragen, mehr Vertrauen",
         "pricing.premium.title": "Premium",
+        "pricing.premium.tagline": "Starker Auftritt & langfristige Wirkung",
         "pricing.deal.newyear": "Neujahrsangebot",
-        "pricing.starter.p1": "1 Landingpage",
-        "pricing.starter.p2": "Mobile-optimiertes Design",
-        "pricing.starter.p3": "Kontaktformular oder WhatsApp-CTA",
-        "pricing.starter.p4": "SEO-Basics (Titel, Struktur, Meta)",
-        "pricing.starter.p5": "1 Korrekturrunde",
-        "pricing.business.p1": "Bis zu 5 Seiten",
-        "pricing.business.p2": "Conversion-optimierte Struktur",
-        "pricing.business.p3": "Performance-Optimierung",
-        "pricing.business.p4": "SEO-Basics",
-        "pricing.business.p5": "2 Korrekturrunden",
-        "pricing.business.p6": "Kontaktformulare & Integrationen",
-        "pricing.premium.p1": "Bis zu 8 Seiten",
-        "pricing.premium.p2": "Premium-UI & dezente Animationen",
-        "pricing.premium.p3": "Erweiterte SEO-Basics",
-        "pricing.premium.p4": "3 Korrekturrunden",
-        "pricing.premium.p5": "14 Tage Support nach Launch",
+        "pricing.starter.p1": "Ideal fuer Solo-Selbststaendige",
+        "pricing.starter.p2": "Professionelle 1-Seiten-Website",
+        "pricing.starter.p3": "Perfekt auf Handy & Tablet",
+        "pricing.starter.p4": "Kontaktformular oder WhatsApp-Button",
+        "pricing.starter.p5": "Google-Grundoptimierung (SEO-Basics)",
+        "pricing.starter.p6": "1 Korrekturrunde",
+        "pricing.starter.p7": "Fertig in ca. 7-14 Tagen",
+        "pricing.business.p1": "Ideal fuer wachsende Unternehmen",
+        "pricing.business.p2": "Bis zu 5 Seiten (Start, Leistungen, Ueber uns, Kontakt ...)",
+        "pricing.business.p3": "Conversion-optimierte Struktur (mehr Anfragen)",
+        "pricing.business.p4": "Schnelle Ladezeiten & Performance-Optimierung",
+        "pricing.business.p5": "SEO-Basics fuer mehrere Seiten",
+        "pricing.business.p6": "Formulare & Integrationen",
+        "pricing.business.p7": "2 Korrekturrunden",
+        "pricing.business.p8": "Fertig in ca. 7-14 Tagen",
+        "pricing.premium.p1": "Ideal fuer etablierte Marken",
+        "pricing.premium.p2": "Bis zu 8 Seiten",
+        "pricing.premium.p3": "Premium-Design mit dezenten Animationen",
+        "pricing.premium.p4": "Erweiterte SEO-Optimierung (Struktur & Metadaten)",
+        "pricing.premium.p5": "3 Korrekturrunden",
+        "pricing.premium.p6": "14 Tage Support nach dem Launch",
+        "pricing.premium.p7": "Fertig in ca. 7-14 Tagen",
         "pricing.cta": "Kostenlose Beratung buchen",
 
         "process.kicker": "Ablauf",
         "process.title": "Einfache Schritte. Saubere Lieferung.",
         "process.subtitle":
-          "Ein klarer Workflow, um schnell zu liefern, ohne Qualität zu verlieren.",
+          "Klarer Workflow fuer schnelle, verlaessliche Lieferung.",
         "process.s1.title": "Kostenlose Beratung",
         "process.s1.text":
           "Wir klären Ziele, Zielgruppe und was deine Website erreichen soll.",
@@ -406,6 +450,7 @@
         "contact.form.emailLabel": "E-Mail",
         "contact.form.messageLabel": "Nachricht",
         "contact.form.submit": "Nachricht senden",
+        "contact.form.note": "Kein Verkaufsgespraech. Nur klare Empfehlung.",
         "contact.form.trust": "Ich antworte normalerweise innerhalb von 24 Stunden. Deine Nachricht bleibt privat.",
         "footer.brand": "Lumi Digital",
         "footer.impressum": "Impressum",
@@ -428,7 +473,8 @@
         "hero.kicker": "Lumi Digital • تصميم وتطوير الويب",
         "hero.title": "مواقع تحول الزوار إلى عملاء - وليست مجرد شكل جميل.",
         "hero.subtitle":
-          "أبني مواقع سريعة وحديثة للشركات الصغيرة التي تريد المزيد من الاستفسارات والثقة وحضورًا أقوى على الإنترنت.",
+          "مواقع سريعة وحديثة تجلب استفسارات وثقة.",
+        "hero.proof": "مخصص للشركات المحلية والناشئة.",
         "hero.ctaPrimary": "احجز استشارة مجانية",
         "hero.ctaSecondary": "عرض الباقات",
         "hero.trustLine": "تسليم سريع • أسعار واضحة • دعم شخصي",
@@ -452,7 +498,7 @@
         "why.kicker": "لماذا Lumi Digital",
         "why.title": "مظهر فاخر. نتائج عملية.",
         "why.subtitle":
-          "أركز على السرعة والوضوح والإقناع - ليقوم موقعك بعمله.",
+          "سريع. واضح. مقنع.",
         "why.b1.title": "تركيز على التحويل",
         "why.b1.text":
           "هيكلة واضحة، دعوات قوية للإجراء، وعناصر ثقة تدفع الزوار للخطوة.",
@@ -501,6 +547,16 @@
         "services.aside.cta": "احجز استشارة مجانية",
         "services.aside.small":
           "بدون ضغط - ستحصل على توصية واضحة والخطوات التالية.",
+        "aftercare.kicker": "متابعة (اختياري)",
+        "aftercare.title": "راحة بال بعد الإطلاق",
+        "aftercare.subtitle": "أحافظ على موقعك مستقراً ومحدثاً لتتفرغ لعملك.",
+        "aftercare.b1": "تغييرات صغيرة",
+        "aftercare.b2": "فحوصات تقنية",
+        "aftercare.b3": "دعم عند الاستفسارات",
+        "aftercare.price": "49 € / شهر أو 499 € / سنة",
+        "aftercare.cta": "اطلب المتابعة",
+        "aftercare.trust": "لا ضغط للبيع. يمكن الإلغاء في أي وقت.",
+
 
         "demos.kicker": "نماذج / أعمال",
         "demos.title": "أمثلة لشكل موقعك.",
@@ -511,42 +567,54 @@
         "demos.d2.title": "مطعم",
         "demos.d2.text":
           "أبرز الأطباق، حجوزات، وزر واتساب للتواصل السريع.",
+        "demos.d2.result": "محسن لزيادة الاستفسارات المحلية.",
         "demos.d3.title": "لياقة / تدريب",
         "demos.d3.text":
           "باقات، شهادات، ونداءات قوية لتحويل الزوار إلى عملاء.",
+        "demos.d3.result": "هيكل يركز على العملاء المحتملين مع دعوات واضحة.",
+        "demos.d4.result": "يبني الثقة مع تواصل سريع.",
         "demos.viewDemo": "عرض النموذج",
-        "demos.getSimilar": "احصل على موقع مشابه",
+        "demos.getSimilar": "احجز استشارة مجانية",
 
         "pricing.kicker": "الأسعار",
         "pricing.title": "باقات واضحة. بدون مفاجآت.",
         "pricing.subtitle": "اختر باقة تناسب عملك اليوم - وتوسع لاحقًا.",
         "pricing.popular": "الأكثر طلبًا",
         "pricing.starter.title": "ستارتر",
+        "pricing.starter.tagline": "سريع أونلاين وبشكل احترافي",
         "pricing.business.title": "بزنس",
+        "pricing.business.tagline": "مزيد من الاستفسارات، مزيد من الثقة",
         "pricing.premium.title": "بريميوم",
+        "pricing.premium.tagline": "حضور قوي وتأثير طويل الأمد",
         "pricing.deal.newyear": "عرض رأس السنة",
-        "pricing.starter.p1": "صفحة هبوط واحدة",
-        "pricing.starter.p2": "تصميم متوافق مع الهواتف",
-        "pricing.starter.p3": "نموذج تواصل أو زر واتساب",
-        "pricing.starter.p4": "أساسيات SEO (عناوين، هيكل، ميتا)",
-        "pricing.starter.p5": "جولة تعديل واحدة",
-        "pricing.business.p1": "حتى 5 صفحات",
-        "pricing.business.p2": "هيكل محسن للتحويل",
-        "pricing.business.p3": "تحسين الأداء",
-        "pricing.business.p4": "أساسيات SEO",
-        "pricing.business.p5": "جولتا تعديل",
-        "pricing.business.p6": "نماذج تواصل ودمج",
-        "pricing.premium.p1": "حتى 8 صفحات",
-        "pricing.premium.p2": "واجهة بريميوم وحركات بسيطة",
-        "pricing.premium.p3": "أساسيات SEO متقدمة",
-        "pricing.premium.p4": "3 جولات تعديل",
-        "pricing.premium.p5": "دعم لمدة 14 يومًا بعد الإطلاق",
+        "pricing.starter.p1": "مثالي للمستقلين الفرديين",
+        "pricing.starter.p2": "موقع احترافي من صفحة واحدة",
+        "pricing.starter.p3": "مثالي للهاتف والتابلت",
+        "pricing.starter.p4": "نموذج تواصل أو زر واتساب",
+        "pricing.starter.p5": "تحسين Google الأساسي (أساسيات SEO)",
+        "pricing.starter.p6": "جولة تعديل واحدة",
+        "pricing.starter.p7": "جاهز خلال حوالي 7-14 يوما",
+        "pricing.business.p1": "مثالي للشركات النامية",
+        "pricing.business.p2": "حتى 5 صفحات (الرئيسية، الخدمات، من نحن، التواصل ...)",
+        "pricing.business.p3": "هيكل محسّن للتحويل (مزيد من الاستفسارات)",
+        "pricing.business.p4": "سرعة تحميل عالية وتحسين الأداء",
+        "pricing.business.p5": "أساسيات SEO لعدة صفحات",
+        "pricing.business.p6": "نماذج وتكاملات",
+        "pricing.business.p7": "جولتا تعديل",
+        "pricing.business.p8": "جاهز خلال حوالي 7-14 يوما",
+        "pricing.premium.p1": "مثالي للعلامات الراسخة",
+        "pricing.premium.p2": "حتى 8 صفحات",
+        "pricing.premium.p3": "تصميم متميز مع حركات خفيفة",
+        "pricing.premium.p4": "تحسين SEO متقدم (الهيكلة والبيانات الوصفية)",
+        "pricing.premium.p5": "3 جولات تعديل",
+        "pricing.premium.p6": "دعم لمدة 14 يوما بعد الإطلاق",
+        "pricing.premium.p7": "جاهز خلال حوالي 7-14 يوما",
         "pricing.cta": "احجز استشارة مجانية",
 
         "process.kicker": "الخطوات",
         "process.title": "خطوات بسيطة. تسليم نظيف.",
         "process.subtitle":
-          "سير عمل واضح للتسليم بسرعة دون التضحية بالجودة.",
+          "سير عمل واضح لتسليم سريع وموثوق.",
         "process.s1.title": "استشارة مجانية",
         "process.s1.text": "نحدد الأهداف والجمهور وما يجب أن يحققه الموقع.",
         "process.s2.title": "التصميم والهيكل",
@@ -573,6 +641,7 @@
         "contact.form.emailLabel": "البريد الإلكتروني",
         "contact.form.messageLabel": "الرسالة",
         "contact.form.submit": "إرسال الرسالة",
+        "contact.form.note": "لا مكالمة بيع. فقط توصية واضحة.",
         "contact.form.trust": "عادةً أرد خلال 24 ساعة. رسالتك تبقى خاصة.",
         "footer.brand": "Lumi Digital",
         "footer.impressum": "بيانات قانونية",
@@ -737,6 +806,10 @@
     const sections = Array.from(sectionMap.values()).map((x) => x.section);
     if (!sections.length) return;
 
+    let orderedSections = sections
+      .slice()
+      .sort((a, b) => a.offsetTop - b.offsetTop);
+
     const setActive = (id) => {
       navLinks.forEach((link) => link.classList.remove("is-active"));
       if (!id) return;
@@ -745,24 +818,36 @@
       entry.links.forEach((link) => link.classList.add("is-active"));
     };
 
-    const getOffset = () => {
+    const refreshOrder = () => {
+      orderedSections = sections
+        .slice()
+        .sort((a, b) => a.offsetTop - b.offsetTop);
+    };
+
+    const getProbe = () => {
       const header = document.querySelector(".header");
-      return (header ? header.offsetHeight : 0) + 16;
+      const headerOffset = (header ? header.offsetHeight : 0) + 16;
+      const viewportProbe = Math.max(headerOffset, window.innerHeight * 0.35);
+      return window.scrollY + viewportProbe;
     };
 
     const updateActive = () => {
-      const scrollPos = window.scrollY + getOffset();
+      const scrollPos = getProbe();
+      const doc = document.documentElement;
+      const docHeight = doc ? doc.scrollHeight : document.body.scrollHeight;
       let currentId = null;
 
-      sections.forEach((section) => {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        if (scrollPos >= top && scrollPos < bottom) currentId = section.id;
+      orderedSections.forEach((section) => {
+        if (scrollPos >= section.offsetTop) currentId = section.id;
       });
 
-      if (!currentId) {
-        const last = sections[sections.length - 1];
-        if (scrollPos >= last.offsetTop) currentId = last.id;
+      if (!currentId && orderedSections.length) {
+        currentId = orderedSections[0].id;
+      }
+
+      if (window.scrollY + window.innerHeight >= docHeight - 2) {
+        const last = orderedSections[orderedSections.length - 1];
+        if (last) currentId = last.id;
       }
 
       setActive(currentId);
@@ -779,12 +864,16 @@
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    window.addEventListener("resize", () => {
+      refreshOrder();
+      onScroll();
+    });
 
     navLinks.forEach((link) => {
       link.addEventListener("click", () => setTimeout(updateActive, 0));
     });
 
+    refreshOrder();
     updateActive();
   }
 

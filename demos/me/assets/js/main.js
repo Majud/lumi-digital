@@ -29,6 +29,28 @@
     return;
   }
 
+  const errorMessage = form.querySelector(".form__error");
+  const name = form.querySelector("#name");
+  const email = form.querySelector("#email");
+  const message = form.querySelector("#message");
+  const requiredFields = [name, email, message].filter(Boolean);
+  let hasSubmitted = false;
+
+  const setFormError = (msg) => {
+    if (!errorMessage) return;
+    if (msg) {
+      errorMessage.textContent = msg;
+      errorMessage.hidden = false;
+    } else {
+      errorMessage.textContent = "";
+      errorMessage.hidden = true;
+    }
+  };
+
+  const getRequiredMessage = () =>
+    (window.LUMI_T && window.LUMI_T("alerts.required")) ||
+    "Bitte fuellen Sie alle Pflichtfelder aus.";
+
   // Simple required validation
   function markInvalid(el, invalid) {
     if (!el) return;
@@ -36,19 +58,45 @@
     else el.removeAttribute("aria-invalid");
   }
 
+  function validateRequired() {
+    let firstInvalid = null;
+    let hasMissing = false;
+
+    requiredFields.forEach((field) => {
+      const invalid = !field.value.trim();
+      markInvalid(field, invalid);
+      if (invalid) {
+        hasMissing = true;
+        if (!firstInvalid) firstInvalid = field;
+      }
+    });
+
+    return { hasMissing, firstInvalid };
+  }
+
+  requiredFields.forEach((field) => {
+    field.addEventListener("input", () => {
+      if (!hasSubmitted) return;
+      markInvalid(field, !field.value.trim());
+      if (requiredFields.every((el) => el.value.trim())) {
+        setFormError("");
+      }
+    });
+  });
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = form.querySelector("#name");
-    const email = form.querySelector("#email");
-    const message = form.querySelector("#message");
+    hasSubmitted = true;
+    const { hasMissing, firstInvalid } = validateRequired();
 
-    const missing = [name, email, message].some((el) => !el || !el.value.trim());
-    markInvalid(name, !name.value.trim());
-    markInvalid(email, !email.value.trim());
-    markInvalid(message, !message.value.trim());
+    if (hasMissing) {
+      setFormError(getRequiredMessage());
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
 
-    if (missing) return;
+    setFormError("");
 
     const submitBtn = form.querySelector('button[type="submit"]');
     const oldText = submitBtn ? submitBtn.textContent : "";
@@ -67,9 +115,12 @@
       alert(msg);
 
       form.reset();
+      requiredFields.forEach((field) => markInvalid(field, false));
+      setFormError("");
+      hasSubmitted = false;
     } catch (err) {
       console.error("EmailJS error:", err);
-      alert("Ups — das Senden hat nicht funktioniert. Bitte versuch es nochmal.");
+      alert("Ups - das Senden hat nicht funktioniert. Bitte versuch es nochmal.");
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;

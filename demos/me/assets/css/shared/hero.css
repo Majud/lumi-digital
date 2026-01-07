@@ -43,6 +43,13 @@
   margin-bottom: 12px;
 }
 
+.hero__proof{
+  margin: 0 0 8px;
+  color: var(--muted-2);
+  font-weight: 700;
+  font-size: 13px;
+}
+
 .trust{
   margin: 10px 0 14px;
   color: var(--muted-2);

@@ -361,25 +361,29 @@
 
 
     <!-- DEMOS -->
-    <section class="section section--soft" id="demos" aria-label="Demos / Portfolio">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker" data-i18n="demos.kicker">Demos / Portfolio</p>
-          <h2 class="section-title" data-i18n="demos.title">Examples of how your site can look.</h2>
-          
-        </div>
+<section class="section section--soft" id="demos" aria-label="Demos / Portfolio">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-kicker" data-i18n="demos.kicker">Demos / Portfolio</p>
+      <h2 class="section-title" data-i18n="demos.title">Examples of how your site can look.</h2>
+    </div>
 
-        <div class="grid grid--3">
-         
+    <div class="demo-slider" data-slider="demos">
+      <button class="demo-slider__nav demo-slider__nav--prev" type="button">
+        <span class="sr-only" data-i18n="demos.prev">Previous demo</span>
+        <span class="demo-slider__icon" aria-hidden="true">‹</span>
+      </button>
 
-          <article class="demo">
+      <div class="demo-slider__viewport">
+        <div class="slider-track" role="list">
+          <article class="demo slider-item" role="listitem">
             <div class="demo__thumb"><img class="demo__img" src="images/resturant.png" alt="Restaurant demo thumbnail" /></div>
             <div class="demo__body">
-              <h3 class="demo__title" data-i18n="demos.d2.title">Restaurant</h3>
+              <h3 class="demo__title" data-i18n="demos.d2.title">Restaurant - Lokal, lecker, online</h3>
               <p class="demo__text" data-i18n="demos.d2.text">
-                Menu highlights, reservations, and a WhatsApp button for quick contact.
+                Menü, Reservierung und schneller Kontakt - ideal für Gäste in der Nähe.
               </p>
-              <p class="demo__meta" data-i18n="demos.d2.result">Optimized for more local inquiries.</p>
+              <p class="demo__meta" data-i18n="demos.d2.result">Mehr Reservierungen aus deiner Region.</p>
               <div class="demo__actions">
                 <a class="btn btn--ghost btn--sm" href="../resturant/" data-i18n="demos.viewDemo">View demo</a>
                 <a class="btn btn--primary btn--sm" href="#contact" data-i18n="demos.getSimilar">Book a free consultation</a>
@@ -387,14 +391,14 @@
             </div>
           </article>
 
-          <article class="demo">
-            <div class="demo__thumb"><img class="demo__img" src="images/gym.png" alt="gym demo thumbnail" /></div>
+          <article class="demo slider-item" role="listitem">
+            <div class="demo__thumb"><img class="demo__img" src="images/gym.png" alt="Fitness studio demo thumbnail" /></div>
             <div class="demo__body">
-              <h3 class="demo__title" data-i18n="demos.d3.title">Fitness / Coaching</h3>
+              <h3 class="demo__title" data-i18n="demos.d3.title">Fitnessstudio - Mehr Mitglieder</h3>
               <p class="demo__text" data-i18n="demos.d3.text">
-                Packages, testimonials, and strong CTAs that turn visitors into leads.
+                Kurse, Preise und Vorteile übersichtlich gezeigt - mit klaren CTAs.
               </p>
-              <p class="demo__meta" data-i18n="demos.d3.result">Lead-focused structure with clear CTAs.</p>
+              <p class="demo__meta" data-i18n="demos.d3.result">Mehr Probetrainings und Anfragen.</p>
               <div class="demo__actions">
                 <a class="btn btn--ghost btn--sm" href="../gmy/" data-i18n="demos.viewDemo">View demo</a>
                 <a class="btn btn--primary btn--sm" href="#contact" data-i18n="demos.getSimilar">Book a free consultation</a>
@@ -402,14 +406,14 @@
             </div>
           </article>
 
-          <article class="demo">
-            <div class="demo__thumb"><img class="demo__img" src="images/handwerker.png" alt="gym demo thumbnail" /></div>
+          <article class="demo slider-item" role="listitem">
+            <div class="demo__thumb"><img class="demo__img" src="images/handwerker.png" alt="Tradesperson demo thumbnail" /></div>
             <div class="demo__body">
-              <h3 class="demo__title" data-i18n="demos.d3.title">Handwerker</h3>
-              <p class="demo__text" data-i18n="demos.d3.text">
-                Packages, testimonials, and strong CTAs that turn visitors into leads.
+              <h3 class="demo__title" data-i18n="demos.d4.title">Handwerker - Schnell gefunden</h3>
+              <p class="demo__text" data-i18n="demos.d4.text">
+                Leistungen, Referenzen und direkter Kontakt - Vertrauen auf den ersten Blick.
               </p>
-              <p class="demo__meta" data-i18n="demos.d4.result">Trust-building with fast contact paths.</p>
+              <p class="demo__meta" data-i18n="demos.d4.result">Mehr Anrufe durch klare Kontaktwege.</p>
               <div class="demo__actions">
                 <a class="btn btn--ghost btn--sm" href="../Tradesperson/" data-i18n="demos.viewDemo">View demo</a>
                 <a class="btn btn--primary btn--sm" href="#contact" data-i18n="demos.getSimilar">Book a free consultation</a>
@@ -418,9 +422,19 @@
           </article>
         </div>
       </div>
-    </section>
+
+      <button class="demo-slider__nav demo-slider__nav--next" type="button">
+        <span class="sr-only" data-i18n="demos.next">Next demo</span>
+        <span class="demo-slider__icon" aria-hidden="true">›</span>
+      </button>
+
+      <div class="demo-slider__dots" data-slider-dots></div>
+    </div>
+  </div>
+</section>
 
 <!-- PRICING -->
+
 <section class="section" id="pricing" aria-label="Pricing">
   <div class="container">
     <div class="section-head">
@@ -447,7 +461,7 @@
     </div>
 
     <ul class="price__list" role="list">
-      <li data-i18n="pricing.starter.p1">Ideal fuer Solo-Selbststaendige</li>
+      <li data-i18n="pricing.starter.p1">Ideal für Solo-Selbstständige</li>
       <li data-i18n="pricing.starter.p2">Professionelle 1-Seiten-Website</li>
       <li data-i18n="pricing.starter.p3">Perfekt auf Handy &amp; Tablet</li>
       <li data-i18n="pricing.starter.p4">Kontaktformular oder WhatsApp-Button</li>
@@ -474,11 +488,11 @@
     </div>
 
     <ul class="price__list" role="list">
-      <li data-i18n="pricing.business.p1">Ideal fuer wachsende Unternehmen</li>
-      <li data-i18n="pricing.business.p2">Bis zu 5 Seiten (Start, Leistungen, Ueber uns, Kontakt ...)</li>
+      <li data-i18n="pricing.business.p1">Ideal für wachsende Unternehmen</li>
+      <li data-i18n="pricing.business.p2">Bis zu 5 Seiten (Start, Leistungen, Über uns, Kontakt ...)</li>
       <li data-i18n="pricing.business.p3">Conversion-optimierte Struktur (mehr Anfragen)</li>
       <li data-i18n="pricing.business.p4">Schnelle Ladezeiten &amp; Performance-Optimierung</li>
-      <li data-i18n="pricing.business.p5">SEO-Basics fuer mehrere Seiten</li>
+      <li data-i18n="pricing.business.p5">SEO-Basics für mehrere Seiten</li>
       <li data-i18n="pricing.business.p6">Formulare &amp; Integrationen</li>
       <li data-i18n="pricing.business.p7">2 Korrekturrunden</li>
       <li data-i18n="pricing.business.p8">Fertig in ca. 7-14 Tagen</li>
@@ -500,7 +514,7 @@
     </div>
 
     <ul class="price__list" role="list">
-      <li data-i18n="pricing.premium.p1">Ideal fuer etablierte Marken</li>
+      <li data-i18n="pricing.premium.p1">Ideal für etablierte Marken</li>
       <li data-i18n="pricing.premium.p2">Bis zu 8 Seiten</li>
       <li data-i18n="pricing.premium.p3">Premium-Design mit dezenten Animationen</li>
       <li data-i18n="pricing.premium.p4">Erweiterte SEO-Optimierung (Struktur &amp; Metadaten)</li>
@@ -731,6 +745,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/slider.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

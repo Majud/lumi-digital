@@ -5,12 +5,9 @@
 		},
 		{
 			"path": "resturant"
-		},
-		{
-			"path": "me"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "me"
+		"liveServer.settings.multiRootWorkspaceName": "lumi-digital"
 	}
 }

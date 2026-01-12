@@ -10,7 +10,20 @@
   <title>Lumi Digital - Websites that convert</title>
   <meta name="description"
     content="Lumi Digital builds modern, fast websites that generate inquiries for small businesses." />
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var lang = params.get("lang") || localStorage.getItem("lumiLang");
+        if (lang) {
+          root.lang = lang;
+          root.dir = lang === "ar" ? "rtl" : "ltr";
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <link rel="stylesheet" href="assets/css/pages/contact.css" />
   <link rel="stylesheet" href="assets/css/pages/demos.css" />
@@ -717,21 +730,21 @@
                   <span class="contact__methodTag" aria-hidden="true">TEL</span>
                   <span class="contact__methodText">
                     <span class="contact__methodLabel" data-i18n="contact.method.phoneLabel">Phone</span>
-                    <span class="contact__methodValue">+49 170 1234567</span>
+                    <span class="contact__methodValue">+49 176 55585526</span>
                   </span>
                 </a>
                 <a class="contact__method" href="https://wa.me/491701234567" target="_blank" rel="noopener">
                   <span class="contact__methodTag" aria-hidden="true">WA</span>
                   <span class="contact__methodText">
                     <span class="contact__methodLabel" data-i18n="contact.method.whatsappLabel">WhatsApp</span>
-                    <span class="contact__methodValue">+49 170 1234567</span>
+                    <span class="contact__methodValue">+49 176 55585526</span>
                   </span>
                 </a>
                 <a class="contact__method" href="mailto:hello@lumi-digital.de">
                   <span class="contact__methodTag" aria-hidden="true">MAIL</span>
                   <span class="contact__methodText">
                     <span class="contact__methodLabel" data-i18n="contact.method.emailLabel">Email</span>
-                    <span class="contact__methodValue">hello@lumi-digital.de</span>
+                    <span class="contact__methodValue">majd@almahamed.de</span>
                   </span>
                 </a>
               </div>
@@ -791,7 +804,7 @@
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <script src="assets/js/app.js?v=20260112"></script>
+  <script src="assets/js/app.js?v=20260112-2"></script>
   <script src="assets/js/slider.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

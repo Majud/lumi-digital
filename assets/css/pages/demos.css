@@ -152,6 +152,13 @@
 
 html[dir="rtl"] .demo-slider__nav--prev{ right: 4px; left: auto; }
 html[dir="rtl"] .demo-slider__nav--next{ left: 4px; right: auto; }
+html[dir="rtl"] .demo-slider__viewport,
+html[dir="rtl"] .slider-track{
+  direction: ltr;
+}
+html[dir="rtl"] .demo{
+  direction: rtl;
+}
 @media (max-width: 720px){
   html[dir="rtl"] .demo-slider__nav--prev{ right: 2px; }
   html[dir="rtl"] .demo-slider__nav--next{ left: 2px; }

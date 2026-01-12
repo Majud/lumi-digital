@@ -28,6 +28,17 @@
     const getLabel = (key, fallback) =>
       (window.LUMI_T && window.LUMI_T(key)) || fallback;
 
+    const applyDirFix = () => {
+      const isRtl = document.documentElement.dir === "rtl";
+      if (isRtl) {
+        viewport.style.direction = "ltr";
+        track.style.direction = "ltr";
+      } else {
+        viewport.style.removeProperty("direction");
+        track.style.removeProperty("direction");
+      }
+    };
+
     const setTransition = (enabled) => {
       track.style.transition = enabled ? "" : "none";
     };
@@ -183,6 +194,7 @@
     let isHovering = false;
 
     const rebuild = (preserveIndex) => {
+      applyDirFix();
       const keep = preserveIndex ? realIndex() : 0;
       removeClones();
       slides = Array.from(track.querySelectorAll(".slider-item:not(.is-clone)"));
@@ -280,13 +292,15 @@
     });
 
     document.addEventListener("lumi:lang", () => {
+      applyDirFix();
+      rebuild(true);
       updateDotLabels();
       syncHeights();
     });
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(syncHeights);
     }
-    window.addEventListener("load", syncHeights);
+    window.addEventListener("load", () => rebuild(true));
 
     rebuild(false);
   }

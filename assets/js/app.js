@@ -255,10 +255,10 @@
         "contact.chip1": "Fast response",
         "contact.chip2": "Clear scope",
         "contact.chip3": "Transparent pricing",
-        "contact.methodsTitle": "Direct contact",
-        "contact.method.phoneLabel": "Phone",
-        "contact.method.whatsappLabel": "WhatsApp",
-        "contact.method.emailLabel": "Email",
+        "contact.methodsTitle": "تواصل مباشر",
+        "contact.method.phoneLabel": "الهاتف",
+        "contact.method.whatsappLabel": "واتساب",
+        "contact.method.emailLabel": "البريد الإلكتروني",
         "contact.form.nameLabel": "Name",
         "contact.form.emailLabel": "Email",
         "contact.form.messageLabel": "Message",
@@ -366,7 +366,8 @@
         "footer.brand": "Lumi Digital",
         "footer.impressum": "Imprint",
         "footer.privacy": "Privacy",
-        "alerts.thanks": "Thank you!"
+        "alerts.thanks": "Thank you!",
+        "alerts.required": "Please fill in all required fields."
       },
 
             // ---------- DE ----------
@@ -665,7 +666,8 @@
         "footer.brand": "Lumi Digital",
         "footer.impressum": "Impressum",
         "footer.privacy": "Datenschutz",
-        "alerts.thanks": "Danke!"
+        "alerts.thanks": "Danke!",
+        "alerts.required": "Bitte fuellen Sie alle Pflichtfelder aus."
       },
 // ---------- AR ----------
       ar: {
@@ -849,10 +851,10 @@
         "contact.chip1": "رد سريع",
         "contact.chip2": "نطاق واضح",
         "contact.chip3": "أسعار شفافة",
-        "contact.methodsTitle": "Direct contact",
-        "contact.method.phoneLabel": "Phone",
-        "contact.method.whatsappLabel": "WhatsApp",
-        "contact.method.emailLabel": "Email",
+        "contact.methodsTitle": "تواصل مباشر",
+        "contact.method.phoneLabel": "الهاتف",
+        "contact.method.whatsappLabel": "واتساب",
+        "contact.method.emailLabel": "البريد الإلكتروني",
         "contact.form.nameLabel": "الاسم",
         "contact.form.emailLabel": "البريد الإلكتروني",
         "contact.form.messageLabel": "الرسالة",
@@ -960,7 +962,8 @@
         "footer.brand": "Lumi Digital",
         "footer.impressum": "بيانات قانونية",
         "footer.privacy": "الخصوصية",
-        "alerts.thanks": "شكرًا لك!"
+        "alerts.thanks": "شكرًا لك!",
+        "alerts.required": "يرجى ملء جميع الحقول المطلوبة."
       }
     };
 

@@ -7,7 +7,20 @@
   <meta name="theme-color" content="#0b0d14" />
   <title data-i18n="impressum.pageTitle">Impressum | LUMI DIGITAL</title>
   <meta name="description" content="Impressum von Lumi Digital." />
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var lang = params.get("lang") || localStorage.getItem("lumiLang");
+        if (lang) {
+          root.lang = lang;
+          root.dir = lang === "ar" ? "rtl" : "ltr";
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <link rel="stylesheet" href="assets/css/shared/base.css" />
   <link rel="stylesheet" href="assets/css/shared/nav.css" />
@@ -160,7 +173,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/app.js?v=20260112"></script>
+  <script src="assets/js/app.js?v=20260112-2"></script>
 </body>
 
 </html>

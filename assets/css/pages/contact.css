@@ -7,6 +7,15 @@
   grid-template-columns: 1fr 1fr;
   gap: 22px;
   align-items: stretch;
+  grid-template-areas: "copy form";
+}
+
+.contact__copy{
+  grid-area: copy;
+}
+
+.contact > .form{
+  grid-area: form;
 }
 
 .contact__panel{
@@ -190,6 +199,25 @@
 html[dir="rtl"] .form__row{
   align-items: flex-end;
 }
+html[dir="rtl"] .contact{
+  grid-template-areas: "form copy";
+}
+html[dir="rtl"] .label{
+  text-align: right;
+}
+html[dir="rtl"] .input,
+html[dir="rtl"] .textarea{
+  direction: rtl;
+  text-align: right;
+}
+html[dir="rtl"] .input[type="email"]{
+  direction: ltr;
+  text-align: right;
+}
+html[dir="rtl"] .form__error{
+  text-align: right;
+  direction: rtl;
+}
 html[dir="rtl"] .form__trust{
   text-align: center;
 }
@@ -198,6 +226,14 @@ html[dir="rtl"] .form__trust{
 @media (max-width: 900px){
   .contact{
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "form";
+  }
+  html[dir="rtl"] .contact{
+    grid-template-areas:
+      "form"
+      "copy";
   }
 }
 
@@ -272,9 +308,20 @@ html[dir="rtl"] .form__trust{
 }
 
 html[dir="rtl"] .contact__method{
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 html[dir="rtl"] .contact__methodText{
   align-items: flex-end;
+}
+html[dir="rtl"] .contact__methodsTitle,
+html[dir="rtl"] .contact__methodLabel,
+html[dir="rtl"] .contact__methodValue{
+  text-align: right;
+}
+html[dir="rtl"] .contact__methodsTitle{
+  direction: rtl;
+}
+html[dir="rtl"] .contact__methodValue{
+  direction: ltr;
 }

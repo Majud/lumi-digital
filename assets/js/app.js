@@ -964,6 +964,45 @@
       }
     };
 
+    const getUrlLang = () => {
+      try {
+        return new URLSearchParams(window.location.search).get("lang");
+      } catch (_) {
+        return null;
+      }
+    };
+
+    const setUrlLang = (lang) => {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", lang);
+        history.replaceState(null, "", url.toString());
+      } catch (_) {}
+    };
+
+    const updateLangLinks = (lang) => {
+      try {
+        const selectors = [
+          'a[href^="index.html"]',
+          'a[href^="impressum.html"]',
+          'a[href^="datenschutz.html"]'
+        ].join(", ");
+
+        document.querySelectorAll(selectors).forEach((link) => {
+          const href = link.getAttribute("href");
+          if (!href) return;
+
+          const [pathAndQuery, hash] = href.split("#");
+          const [path, query = ""] = pathAndQuery.split("?");
+          const params = new URLSearchParams(query);
+          params.set("lang", lang);
+
+          const next = `${path}?${params.toString()}${hash ? "#" + hash : ""}`;
+          link.setAttribute("href", next);
+        });
+      } catch (_) {}
+    };
+
     const getText = (lang, key) =>
       (translations[lang] && translations[lang][key]) ||
       (translations.en && translations.en[key]) ||
@@ -999,6 +1038,8 @@
       try {
         localStorage.setItem("lumiLang", safe);
       } catch (_) {}
+      setUrlLang(safe);
+      updateLangLinks(safe);
       document.dispatchEvent(new CustomEvent("lumi:lang", { detail: safe }));
     };
 
@@ -1014,7 +1055,8 @@
       stored = localStorage.getItem("lumiLang");
     } catch (_) {}
 
-    applyLang(stored || document.documentElement.lang || "en");
+    const urlLang = getUrlLang();
+    applyLang(urlLang || stored || document.documentElement.lang || "en");
 
     // Bind buttons (desktop + mobile)
     document.querySelectorAll(".lang__btn").forEach((btn) => {
@@ -1023,6 +1065,12 @@
         applyLang(lang);
       });
     });
+
+    const reapplyLang = () => {
+      applyLang(document.documentElement.lang || "en");
+    };
+    window.addEventListener("load", reapplyLang);
+    setTimeout(reapplyLang, 0);
   }
 
   function initSmoothScroll() {

@@ -1,0 +1,35 @@
+
+/* ===========================
+   General sections
+   =========================== */
+
+.section{
+  padding: 72px 0;
+}
+.section--soft{
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+}
+
+.section-head{
+  margin-bottom: 26px;
+  max-width: 780px;
+}
+.section-kicker{
+  color: rgba(34,211,238,.9);
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 0 0 10px;
+}
+.section-title{
+  margin: 0 0 10px;
+  font-size: 34px;
+  line-height: 1.12;
+  letter-spacing: -.02em;
+}
+.section-sub{
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}

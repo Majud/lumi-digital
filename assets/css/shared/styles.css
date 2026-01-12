@@ -1,0 +1,128 @@
+/* ===========================
+   Lumi Digital — Styles
+   Dark premium + glass + gradients
+   No inline CSS
+   =========================== */
+
+
+/* ===========================
+   Reveal animations
+   =========================== */
+
+.js.reveal-ready :is(
+  .hero__content > *,
+  .hero__visual,
+  .section-head,
+  .card,
+  .tile,
+  .service-item,
+  .demo,
+  .step,
+  .contact__copy,
+  .form,
+  .services-pro__aside,
+  .badges > *
+){
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.js.reveal-ready .hero__visual{
+  transform: translateY(16px) scale(.98);
+}
+
+.js.reveal-ready .is-visible{
+  opacity: 1;
+  transform: none;
+}
+
+.js.reveal-ready .price{
+  opacity: 0;
+  transition: opacity .7s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity;
+}
+
+.js.reveal-ready .price.is-visible{
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .js :is(
+    .hero__content > *,
+    .hero__visual,
+    .section-head,
+    .card,
+    .tile,
+    .service-item,
+    .demo,
+    .step,
+    .contact__copy,
+    .form,
+    .services-pro__aside,
+    .badges > *,
+    .price
+  ){
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+/* ===========================
+   RTL adjustments
+   =========================== */
+
+html[dir="rtl"] .brand{ flex-direction: row-reverse; }
+html[dir="rtl"] .nav{ direction: rtl; }
+html[dir="rtl"] .hero__cta{ justify-content: flex-start; }
+html[dir="rtl"] .list__item{ flex-direction: row-reverse; }
+html[dir="rtl"] .list__text{ text-align: right; width: 100%; }
+html[dir="rtl"] .price__badge{ left: 14px; right: auto; }
+html[dir="rtl"] .price__list li{
+  padding-left: 0;
+  padding-right: 18px;
+}
+html[dir="rtl"] .price__list li::before{
+  left: auto;
+  right: 4px;
+}
+html[dir="rtl"] .step{ flex-direction: row-reverse; }
+html[dir="rtl"] .step__content{ text-align: right; }
+html[dir="rtl"] .footer__inner{ flex-direction: row-reverse; }
+html[dir="rtl"] .section-head{ text-align: right; }
+html[dir="rtl"] .section-sub{ text-align: right; }
+html[dir="rtl"] body{
+  direction: rtl;
+  text-align: right;
+}
+html[dir="rtl"] .hero__content,
+html[dir="rtl"] .contact__copy,
+html[dir="rtl"] .card__text,
+html[dir="rtl"] .tile__text,
+html[dir="rtl"] .demo__text,
+html[dir="rtl"] .demo__meta,
+html[dir="rtl"] .services-pro__hint,
+html[dir="rtl"] .services-pro__noteText,
+html[dir="rtl"] .services-pro__asideSmall,
+html[dir="rtl"] .aftercare__trust,
+html[dir="rtl"] .aftercare__price,
+html[dir="rtl"] .price__list,
+html[dir="rtl"] .form__note,
+html[dir="rtl"] .form__trust{
+  text-align: right;
+}
+html[dir="rtl"] .price,
+html[dir="rtl"] .price__head,
+html[dir=""] .price__list{
+  text-align: right;
+}

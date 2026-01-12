@@ -1,0 +1,168 @@
+/* =========================
+   PROCESS – PRO Timeline UI
+   ========================= */
+
+:root{
+  --process-grad: linear-gradient(135deg, rgba(124,58,237,.95), rgba(34,211,238,.90));
+  --process-bg: rgba(255,255,255,.05);
+  --process-border: rgba(255,255,255,.10);
+}
+
+#process .process{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+/* Item (card) */
+#process .process__item{
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 14px;
+  padding: 18px 18px;
+  border-radius: var(--radius-lg);
+  background: var(--process-bg);
+  border: 1px solid var(--process-border);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Icon bubble */
+#process .process__icon{
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: #07101a;
+  background: var(--process-grad);
+  flex: 0 0 auto;
+}
+
+#process .process__svg{
+  width: 22px;
+  height: 22px;
+}
+
+/* Text */
+#process .process__label{
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+#process .process__desc{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Step number as small badge (optional) */
+#process .process__num{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 900;
+  color: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+/* Desktop: horizontal timeline */
+/* Desktop: gleiche Höhe + gleiche Struktur */
+@media (min-width: 900px){
+  #process .process{
+    grid-auto-rows: 1fr;              /* gleiche Zeilenhöhe */
+    align-items: stretch;
+  }
+
+  #process .process__item{
+    height: 100%;                      /* jede Card füllt die Row */
+    display: flex;                     /* statt grid -> stabiler */
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+  }
+
+  #process .process__meta{
+    flex: 1;                           /* Textbereich wächst gleich */
+    display: flex;
+    flex-direction: column;
+  }
+
+  #process .process__desc{
+    margin-top: 0;
+  }
+}
+
+
+  #process .process__icon{
+    margin: 0 auto;
+  }
+
+  /* Connector line (behind cards) */
+  #process .process{
+    position: relative;
+    padding-top: 18px;
+  }
+  #process .process::before{
+    content:"";
+    position:absolute;
+    left: 7%;
+    right: 7%;
+    top: 45px;            /* aligns through icon center */
+    height: 3px;
+    border-radius: 999px;
+    background: var(--process-grad);
+    opacity: .95;
+    z-index: 0;
+  }
+  #process .process__item{
+    z-index: 1; /* above the line */
+  }
+
+  #process .process__num{
+    right: 14px;
+  }
+
+
+/* Hover polish */
+#process .process__item:hover{
+  border-color: rgba(255,255,255,.18);
+  transform: translateY(-2px);
+  transition: transform .18s ease, border-color .18s ease;
+}
+
+/* Optional: mark the current step */
+#process .process__item.is-active{
+  border-color: rgba(34,211,238,.30);
+}
+
+/* =========================
+   RTL support (Arabic)
+   ========================= */
+html[dir="rtl"] #process .process__num{
+  right: auto;
+  left: 12px;
+}
+
+@media (min-width: 900px){
+  html[dir="rtl"] #process .process::before{
+    /* line stays fine in rtl, no change needed */
+  }
+}
+.process__photo {
+  width: 80%;
+  height: 80%;
+  border-radius: 6px;   /* إذا بدك نفس إحساس الـ UI */
+}

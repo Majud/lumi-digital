@@ -1,0 +1,280 @@
+/* ===========================
+   Contact
+   =========================== */
+
+.contact{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.contact__panel{
+  margin-top: 18px;
+}
+
+.contact__chips{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.chip{
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+/* ===========================
+   Contact cards (Modern)
+   =========================== */
+
+.contact__panel.card,
+.form.card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  padding: 24px;
+  background: linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+  backdrop-filter: blur(16px);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.contact__panel.card:hover{
+  border-color: rgba(34,211,238,.28);
+  box-shadow: 0 26px 70px rgba(0,0,0,.38);
+  transform: translateY(-1px);
+}
+
+.form.card:focus-within{
+  border-color: rgba(34,211,238,.4);
+  box-shadow: 0 26px 70px rgba(0,0,0,.4), 0 0 0 3px rgba(34,211,238,.12);
+}
+
+.contact__panel.card::before,
+.form.card::before{
+  content: "";
+  position: absolute;
+  inset: -55% -20% auto -20%;
+  height: 65%;
+  background: radial-gradient(520px 190px at 10% 0, rgba(34,211,238,.32), transparent 65%);
+  opacity: .65;
+  pointer-events: none;
+}
+
+.contact__panel.card::after,
+.form.card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+  pointer-events: none;
+}
+
+.contact__panel.card > *,
+.form.card > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   Form (Professional)
+   =========================== */
+
+.form{
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+}
+
+.form__row{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.label{
+  font-weight: 900;
+  font-size: 12.5px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: rgba(238,242,255,.85);
+}
+
+.input,
+.textarea{
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  padding: 13px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+.textarea{
+  resize: vertical;
+  min-height: 240px;
+}
+
+.input::placeholder,
+.textarea::placeholder{
+  color: rgba(238,242,255,.45);
+}
+
+/* Focus state */
+.input:focus,
+.textarea:focus{
+  outline: none;
+  border-color: rgba(34,211,238,.45);
+  background: rgba(255,255,255,.05);
+  box-shadow: 0 0 0 3px rgba(34,211,238,.15);
+}
+
+/* Custom validation */
+.input[aria-invalid="true"],
+.textarea[aria-invalid="true"]{
+  border-color: var(--danger);
+  background: rgba(251,113,133,.08);
+  box-shadow: 0 0 0 3px rgba(251,113,133,.18);
+}
+.input[aria-invalid="true"]:focus,
+.textarea[aria-invalid="true"]:focus{
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(251,113,133,.24);
+}
+
+.form__error{
+  margin: 8px 0 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(251,113,133,.45);
+  background: rgba(251,113,133,.12);
+  color: #fecdd3;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.form__note{
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* Trust line */
+.form__trust{
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--muted-2);
+}
+
+/* RTL support */
+html[dir="rtl"] .form__row{
+  align-items: flex-end;
+}
+html[dir="rtl"] .form__trust{
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .contact{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.contact__methodsTitle{
+  margin: 14px 0 8px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact__methods{
+  display: grid;
+  gap: 10px;
+}
+
+.contact__method{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color .15s ease, background .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.contact__method:focus-visible,
+.contact__method:hover{
+  border-color: rgba(34,211,238,.45);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 0 0 3px rgba(34,211,238,.12);
+  transform: translateY(-1px);
+}
+
+.contact__methodTag{
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: rgba(34,211,238,.16);
+  border: 1px solid rgba(34,211,238,.35);
+  color: rgba(226,232,240,.92);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.contact__methodText{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.contact__methodLabel{
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact__methodValue{
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+html[dir="rtl"] .contact__method{
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .contact__methodText{
+  align-items: flex-end;
+}

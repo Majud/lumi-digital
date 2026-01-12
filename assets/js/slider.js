@@ -21,6 +21,8 @@
     let slidesPerView = 1;
     let autoplayId = null;
     let resizeTimer = null;
+    let measureRetries = 0;
+    const maxMeasureRetries = 5;
 
     const autoplayDelay = 6500;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -52,14 +54,16 @@
 
     const measure = () => {
       const first = track.querySelector(".slider-item");
-      if (!first) return;
+      if (!first) return false;
       slideSize = first.getBoundingClientRect().width;
-      gap = readGap();
       const viewportWidth = viewport.getBoundingClientRect().width;
+      if (!slideSize || !viewportWidth) return false;
+      gap = readGap();
       slidesPerView = Math.max(
         1,
         Math.floor((viewportWidth + gap) / (slideSize + gap))
       );
+      return true;
     };
 
     const syncHeights = () => {
@@ -200,7 +204,14 @@
       slides = Array.from(track.querySelectorAll(".slider-item:not(.is-clone)"));
       if (!slides.length) return;
 
-      measure();
+      if (!measure()) {
+        if (measureRetries < maxMeasureRetries) {
+          measureRetries += 1;
+          window.requestAnimationFrame(() => rebuild(preserveIndex));
+        }
+        return;
+      }
+      measureRetries = 0;
 
       if (slides.length > slidesPerView) {
         const head = slides.slice(0, slidesPerView).map(cloneSlide);

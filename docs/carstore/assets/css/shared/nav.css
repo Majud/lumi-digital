@@ -1,0 +1,106 @@
+.top-note{
+  background: linear-gradient(90deg, rgba(249,115,22,.10), rgba(251,146,60,.05));
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+}
+.top-note .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 22px;
+}
+.top-link{ color:var(--muted); }
+.top-link:hover{ color:var(--text); }
+
+.nav-wrap{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter: blur(10px);
+  background: rgba(7,10,14,.72);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 0;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  letter-spacing:.02em;
+}
+.brand-dot{
+  width:22px;height:22px;border-radius:7px;
+  background: radial-gradient(circle at 35% 35%, #fff 0 10%, transparent 11%),
+              linear-gradient(180deg, var(--accent), #ff3d00);
+  box-shadow: 0 10px 20px rgba(255,90,31,.18);
+}
+.brand-text{font-size:16px}
+
+.nav-links{
+  display:flex;
+  gap:22px;
+  align-items:center;
+  color:rgba(233,238,246,.75);
+  font-weight:500;
+  font-size:14px;
+}
+.nav-links a:hover{color:#fff}
+
+.nav-actions{display:flex; align-items:center; gap:10px}
+
+.nav-burger{
+  display:none;
+  width:44px;height:44px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.02);
+}
+.nav-burger span{
+  display:block;
+  width:18px;
+  height:2px;
+  margin:4px auto;
+  background:rgba(233,238,246,.85);
+  border-radius:2px;
+}
+
+@media (max-width: 860px){
+  .nav-links{
+    position:fixed;
+    top:64px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(560px, 92%);
+    padding:14px;
+    border-radius:16px;
+    border:1px solid var(--border);
+    background: rgba(10,14,20,.92);
+    backdrop-filter: blur(10px);
+    display:none;
+    flex-direction:column;
+    gap:12px;
+    box-shadow:var(--shadow);
+  }
+  .nav-links.open{display:flex}
+  .nav-burger{display:inline-block}
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+.logo-image{
+  height:54px;
+  width:auto;
+}

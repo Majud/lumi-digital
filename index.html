@@ -25,6 +25,9 @@
     })();
   </script>
 
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700|outfit:400,500,700,800,900" rel="stylesheet" />
+
   <link rel="stylesheet" href="assets/css/pages/contact.css" />
   <link rel="stylesheet" href="assets/css/pages/demos.css" />
   <link rel="stylesheet" href="assets/css/pages/pricing.css" />
@@ -135,24 +138,8 @@
         </div>
 
         <div class="hero__visual" aria-hidden="true">
-          <div class="visual-card">
-            <div class="visual-card__top">
-              <span class="dot dot--red"></span>
-              <span class="dot dot--yellow"></span>
-              <span class="dot dot--green"></span>
-            </div>
-            <div class="visual-card__body">
-              <div class="skeleton skeleton--h"></div>
-              <div class="skeleton skeleton--p"></div>
-              <div class="skeleton skeleton--p"></div>
-              <div class="skeleton skeleton--grid">
-                <div class="skeleton skeleton--tile"></div>
-                <div class="skeleton skeleton--tile"></div>
-                <div class="skeleton skeleton--tile"></div>
-                <div class="skeleton skeleton--tile"></div>
-              </div>
-              <div class="skeleton skeleton--btn"></div>
-            </div>
+          <div class="hero-mockup-wrapper" style="perspective: 1000px;">
+            <img src="images/hero_mockup.png" alt="Premium Web Design UI" class="hero-mockup-img" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 40px 80px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1); transform: rotateY(-10deg) rotateX(5deg); transition: transform 0.5s ease;" onmouseover="this.style.transform='rotateY(0deg) rotateX(0deg) scale(1.02)'" onmouseout="this.style.transform='rotateY(-10deg) rotateX(5deg) scale(1)'" />
           </div>
         </div>
       </div>
@@ -175,44 +162,25 @@
       </div>
     </section>
 
-    <!-- WHO IT'S FOR -->
-    <section class="section" id="who" aria-label="Who it's for">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker" data-i18n="who.kicker">Who it’s for</p>
-          <h2 class="section-title" data-i18n="who.title">Designed for people who need results.</h2>
-          <p class="section-sub" data-i18n="who.subtitle">
-            If your website should bring you inquiries and trust, you’re in the right place.
-          </p>
-        </div>
-
-        <div class="grid grid--3">
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">🏪</div>
-            <h3 class="card__title" data-i18n="who.card1.title">Small businesses</h3>
-            <p class="card__text" data-i18n="who.card1.text">
-              A strong website that looks professional and turns visitors into customers.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">📍</div>
-            <h3 class="card__title" data-i18n="who.card2.title">Local services</h3>
-            <p class="card__text" data-i18n="who.card2.text">
-              Clear offers, Google Maps integration, and a fast way for people to contact you.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">🚀</div>
-            <h3 class="card__title" data-i18n="who.card3.title">Freelancers & startups</h3>
-            <p class="card__text" data-i18n="who.card3.text">
-              Modern brand presence, clean UI, and conversion-focused sections that sell.
-            </p>
-          </article>
+    <!-- SOCIAL PROOF MARQUEE -->
+    <section class="marquee-section" aria-hidden="true">
+      <p class="marquee-kicker" data-i18n="marquee.title">Vertraut von lokalen Marktführern</p>
+      <div class="marquee">
+        <div class="marquee__inner">
+          <div class="marquee__item">★ Handwerkskunst Müller</div>
+          <div class="marquee__item">★ Café Baristas</div>
+          <div class="marquee__item">★ Kanzlei Dr. Schmidt</div>
+          <div class="marquee__item">★ Dentalpraxis Berlin</div>
+          <div class="marquee__item">★ Auto Reparatur Huber</div>
+          <div class="marquee__item">★ Handwerkskunst Müller</div>
+          <div class="marquee__item">★ Café Baristas</div>
+          <div class="marquee__item">★ Kanzlei Dr. Schmidt</div>
+          <div class="marquee__item">★ Dentalpraxis Berlin</div>
+          <div class="marquee__item">★ Auto Reparatur Huber</div>
         </div>
       </div>
     </section>
+
 
     <!-- WHY LUMI DIGITAL -->
     <section class="section section--soft" id="why" aria-label="Why Lumi Digital">
@@ -428,6 +396,7 @@
           <div class="demo-slider__viewport">
             <div class="slider-track" role="list">
               <article class="demo slider-item" role="listitem">
+                <span class="demo__badge demo__badge--starter" data-i18n="demos.tag.starter">Starter Paket</span>
                 <div class="demo__thumb"><img class="demo__img" src="images/resturant.png"
                     alt="Restaurant demo thumbnail" /></div>
                 <div class="demo__body">
@@ -445,6 +414,7 @@
               </article>
 
               <article class="demo slider-item" role="listitem">
+                <span class="demo__badge demo__badge--starter" data-i18n="demos.tag.starter">Starter Paket</span>
                 <div class="demo__thumb"><img class="demo__img" src="images/gym.png"
                     alt="Fitness studio demo thumbnail" /></div>
                 <div class="demo__body">
@@ -462,6 +432,7 @@
               </article>
 
               <article class="demo slider-item" role="listitem">
+                <span class="demo__badge demo__badge--business" data-i18n="demos.tag.business">Business Paket</span>
                 <div class="demo__thumb"><img class="demo__img" src="images/handwerker.png"
                     alt="Tradesperson demo thumbnail" /></div>
                 <div class="demo__body">
@@ -479,6 +450,7 @@
               </article>
 
               <article class="demo slider-item" role="listitem">
+                <span class="demo__badge demo__badge--starter" data-i18n="demos.tag.starter">Starter Paket</span>
                 <div class="demo__thumb">
                   <img class="demo__img" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" alt="Yoga Studio Demo Thumbnail" />
                 </div>
@@ -497,6 +469,7 @@
 
 
               <article class="demo slider-item" role="listitem">
+                <span class="demo__badge demo__badge--premium" data-i18n="demos.tag.premium">Premium Paket</span>
                 <div class="demo__thumb">
                   <img class="demo__img" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800" alt="Car Dealership Demo Thumbnail" />
                 </div>
@@ -512,6 +485,42 @@
                   </div>
                 </div>
               </article>
+
+              <article class="demo slider-item" role="listitem">
+                <span class="demo__badge demo__badge--premium" data-i18n="demos.tag.premium">Premium Paket</span>
+                <div class="demo__thumb">
+                  <img class="demo__img" src="images/demo_realestate.png" alt="Real Estate Broker Demo Thumbnail" />
+                </div>
+                <div class="demo__body">
+                  <h3 class="demo__title" data-i18n="demos.d7.title">IMMOBILIENMAKLER</h3>
+                  <p class="demo__text" data-i18n="demos.d7.text">
+                    Exklusive Präsentation hochwertiger Objekte mit smarten Filtern und elegantem Dark-Mode Design.
+                  </p>
+                  <p class="demo__meta" data-i18n="demos.d7.result">Höheres Vertrauen und mehr qualifizierte Leads.</p>
+                  <div class="demo__actions">
+                    <a class="btn btn--ghost btn--sm" href="docs/realestate/" data-i18n="demos.viewDemo">View demo</a>
+                    <a class="btn btn--primary btn--sm" href="#contact" data-i18n="demos.getSimilar">Book a free consultation</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="demo slider-item" role="listitem">
+                <span class="demo__badge demo__badge--premium" data-i18n="demos.tag.premium">Premium Paket</span>
+                <div class="demo__thumb">
+                  <img class="demo__img" src="images/demo_ecommerce.png" alt="E-Commerce Fashion Demo Thumbnail" />
+                </div>
+                <div class="demo__body">
+                  <h3 class="demo__title" data-i18n="demos.d8.title">ONLINE SHOP</h3>
+                  <p class="demo__text" data-i18n="demos.d8.text">
+                    Premium E-Commerce Erlebnis. Ästhetische Produktkarten, reibungsloser Checkout und blitzschnelle Ladezeiten.
+                  </p>
+                  <p class="demo__meta" data-i18n="demos.d8.result">Höhere Conversion-Rate bei Shop-Besuchern.</p>
+                  <div class="demo__actions">
+                    <a class="btn btn--ghost btn--sm" href="docs/ecommerce/" data-i18n="demos.viewDemo">View demo</a>
+                    <a class="btn btn--primary btn--sm" href="#contact" data-i18n="demos.getSimilar">Book a free consultation</a>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
 
@@ -521,6 +530,45 @@
           </button>
 
           <div class="demo-slider__dots" data-slider-dots></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials" aria-label="Testimonials">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="testi.kicker">Kundenstimmen</p>
+          <h2 class="section-title" data-i18n="testi.title">Das sagen unsere Kunden.</h2>
+          <p class="section-sub" data-i18n="testi.subtitle">
+            Webseiten, die echte Ergebnisse in der Praxis liefern.
+          </p>
+        </div>
+        <div class="testi-grid">
+          <article class="testi-card">
+            <p class="testi-text" data-i18n="testi.q1.text">
+              Seitdem wir die neue Webseite von Lumi Digital haben, hat sich die Anzahl unserer Neuanfragen verdreifacht. Der Prozess war extrem professionell und schnell!
+            </p>
+            <div class="testi-author">
+              <div class="testi-avatar">JM</div>
+              <div class="testi-meta">
+                <h4 data-i18n="testi.q1.name">Johannes Müller</h4>
+                <span data-i18n="testi.q1.role">Inhaber, Handwerksbetrieb</span>
+              </div>
+            </div>
+          </article>
+          <article class="testi-card">
+            <p class="testi-text" data-i18n="testi.q2.text">
+              Endlich eine Webseite, die auf dem Handy perfekt aussieht und super schnell lädt. Unsere Tisch-Reservierungen sind massiv hochgegangen.
+            </p>
+            <div class="testi-author">
+              <div class="testi-avatar">SW</div>
+              <div class="testi-meta">
+                <h4 data-i18n="testi.q2.name">Sarah Weber</h4>
+                <span data-i18n="testi.q2.role">Geschäftsführerin, Restaurant</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -671,83 +719,6 @@
     </section>
 
 
-    <!-- PROCESS -->
-    <section class="section section--soft" id="process" aria-label="Process">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker" data-i18n="process.kicker">Process</p>
-          <h2 class="section-title" data-i18n="process.title">Simple steps. Clean delivery.</h2>
-          <p class="section-sub" data-i18n="process.subtitle">
-            A clear workflow for fast, reliable delivery.
-          </p>
-        </div>
-
-        <ol class="process" role="list">
-          <li class="process__item is-active">
-            <div class="process__icon" aria-hidden="true">
-              <img src="images/beratung.png" alt="Consultation" class="process__photo" loading="lazy" />
-            </div>
-
-
-            <div class="process__meta">
-              <p class="process__label" data-i18n="process.s1.title">Free consultation</p>
-              <p class="process__desc" data-i18n="process.s1.text">We clarify goals, target audience, and what your site
-                must achieve.</p>
-            </div>
-            <span class="process__num" aria-label="Step 1">1</span>
-          </li>
-
-          <li class="process__item">
-            <div class="process__icon" aria-hidden="true">
-              <img src="images/website.png" alt="website" class="process__photo" loading="lazy" />
-
-              <line x1="8" y1="24" x2="56" y2="24" />
-              <line x1="22" y1="24" x2="22" y2="52" />
-
-              <path d="M42 18h8v-6h-8v6z" />
-              <path d="M50 15h3" />
-              <path d="M42 15h-2" /> </svg>
-
-            </div>
-
-
-            <div class="process__meta">
-              <p class="process__label" data-i18n="process.s2.title">Design & structure</p>
-              <p class="process__desc" data-i18n="process.s2.text">I create a modern layout with clear sections and
-                conversion flow.</p>
-            </div>
-            <span class="process__num" aria-label="Step 2">2</span>
-          </li>
-
-          <li class="process__item">
-            <div class="process__icon" aria-hidden="true">
-              <img src="images/feedback.png" alt="Consultation" class="process__photo" loading="lazy" />
-
-            </div>
-            <div class="process__meta">
-              <p class="process__label" data-i18n="process.s3.title">Feedback & revisions</p>
-              <p class="process__desc" data-i18n="process.s3.text">You review, I adjust — fast iterations with clear
-                checkpoints.</p>
-            </div>
-            <span class="process__num" aria-label="Step 3">3</span>
-          </li>
-
-          <li class="process__item">
-            <div class="process__icon" aria-hidden="true">
-              <img src="images/leben.png" alt="Consultation" class="process__photo" loading="lazy" />
-
-            </div>
-            <div class="process__meta">
-              <p class="process__label" data-i18n="process.s4.title">Launch</p>
-              <p class="process__desc" data-i18n="process.s4.text">We launch your site live – optimized, responsive, and
-                fully functional.</p>
-            </div>
-            <span class="process__num" aria-label="Step 4">4</span>
-          </li>
-        </ol>
-
-      </div>
-    </section>
 
     <!-- CONTACT -->
     <section class="section" id="contact" aria-label="Contact">

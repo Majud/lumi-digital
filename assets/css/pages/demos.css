@@ -1,5 +1,5 @@
 /* Demos */
-.demo{
+.demo{ position: relative;
   overflow:hidden;
   border-radius: var(--radius-lg);
   background: rgba(255,255,255,.05);
@@ -156,10 +156,44 @@ html[dir="rtl"] .demo-slider__viewport,
 html[dir="rtl"] .slider-track{
   direction: ltr;
 }
-html[dir="rtl"] .demo{
+html[dir="rtl"] .demo{ position: relative;
   direction: rtl;
+}
+html[dir="rtl"] .demo__badge {
+  right: auto;
+  left: 12px;
 }
 @media (max-width: 720px){
   html[dir="rtl"] .demo-slider__nav--prev{ right: 2px; }
   html[dir="rtl"] .demo-slider__nav--next{ left: 2px; }
+}
+
+.demo__badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.demo__badge--starter {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.demo__badge--business {
+  background: rgba(34, 211, 238, 0.15);
+  color: #22d3ee;
+  border-color: rgba(34, 211, 238, 0.3);
+}
+.demo__badge--premium {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.85), rgba(34, 211, 238, 0.85));
+  color: #fff;
+  border: none;
 }

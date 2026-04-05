@@ -129,3 +129,16 @@
     }
   });
 })();
+
+// --- GSAP Global Reveals ---
+if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+  const revealElements = document.querySelectorAll(".card, .tile, .section-title, .section-sub, .price, .demo, .testi-card, .service-item, .marquee-section");
+  revealElements.forEach((el) => {
+    gsap.set(el, { opacity: 0, y: 30 });
+    gsap.to(el, {
+      scrollTrigger: { trigger: el, start: "top 95%" },
+      opacity: 1, y: 0, duration: 0.8, ease: "power3.out"
+    });
+  });
+}

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVA Fashion Store – Premium Demo · Lumi Digital</title>
+  <meta name="description" content="Premium E-Commerce Modeshop Demo – Designbeispiel von Lumi Digital. Für Shops, die konvertieren und begeistern." />
+  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link href="https://fonts.bunny.net/css?family=outfit:300,400,500,600,700,800&family=inter:400,500,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #a78bfa;
+      --accent-2: #818cf8;
+      --accent-dim: rgba(167,139,250,0.12);
+      --bg: #09090f;
+      --bg-2: #0f0f1a;
+      --bg-card: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --text: #f8f8ff;
+      --muted: rgba(248,248,255,0.5);
+      --radius: 16px;
+      --radius-sm: 8px;
+      --purple: #7c3aed;
+      --cyan: #22d3ee;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 700; line-height: 1.15; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Top Notice */
+    .top-note {
+      background: var(--accent-dim);
+      border-bottom: 1px solid rgba(167,139,250,0.2);
+      padding: 10px 0;
+      font-size: 13px;
+      color: var(--accent);
+      text-align: center;
+    }
+    .top-note .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .top-link { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .top-link:hover { text-decoration: underline; }
+
+    /* Nav */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(9,9,15,0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo {
+      font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-actions { display: flex; align-items: center; gap: 16px; }
+    .cart-btn {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--bg-card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 18px; position: relative;
+      transition: border-color 0.2s;
+    }
+    .cart-btn:hover { border-color: var(--accent); }
+    .cart-count {
+      position: absolute; top: -4px; right: -4px;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--accent); color: var(--bg);
+      font-size: 10px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-cta {
+      padding: 10px 22px;
+      background: linear-gradient(135deg, var(--purple), var(--accent));
+      color: #fff; border-radius: 99px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 88px 0 80px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -150px; right: -150px;
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse, rgba(124,58,237,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -100px; left: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse, rgba(34,211,238,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
+    .hero-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .hero-label::after { content: ''; flex: 1; height: 1px; background: var(--accent-dim); max-width: 80px; }
+    .hero h1 { font-size: clamp(38px, 5.5vw, 66px); font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; }
+    .hero h1 .grad {
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-sub { color: var(--muted); font-size: 17px; max-width: 420px; margin-bottom: 36px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+    .btn-primary {
+      padding: 14px 32px;
+      background: linear-gradient(135deg, var(--purple), var(--accent));
+      color: #fff; border-radius: 99px; font-size: 15px; font-weight: 700;
+      text-decoration: none; transition: opacity 0.2s, transform 0.15s;
+      box-shadow: 0 8px 28px rgba(124,58,237,0.35);
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+    .btn-ghost {
+      padding: 14px 28px;
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border); border-radius: 99px;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--accent); background: var(--accent-dim); }
+    .hero-trust { display: flex; align-items: center; gap: 14px; }
+    .trust-faces { display: flex; }
+    .face {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 2px solid var(--bg);
+      margin-left: -8px; font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg-2);
+    }
+    .face:first-child { margin-left: 0; }
+    .trust-text { font-size: 13px; color: var(--muted); }
+    .trust-text strong { color: var(--text); }
+
+    /* Product showcase */
+    .hero-products { position: relative; }
+    .product-featured {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+    .prod-img-placeholder {
+      width: 100%; height: 300px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 80px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(34,211,238,0.08));
+    }
+    .prod-body { padding: 20px; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .prod-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .prod-meta { font-size: 13px; color: var(--muted); }
+    .prod-price { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 800; }
+    .add-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, var(--purple), var(--accent));
+      color: #fff; border-radius: 99px; font-size: 13px; font-weight: 700;
+      border: none; cursor: pointer; transition: opacity 0.2s;
+      text-decoration: none;
+    }
+    .add-btn:hover { opacity: 0.88; }
+    .mini-products { display: flex; gap: 12px; margin-top: 16px; }
+    .mini-prod {
+      flex: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      overflow: hidden; cursor: pointer; transition: border-color 0.2s;
+    }
+    .mini-prod:hover { border-color: var(--accent); }
+    .mini-prod-img { width: 100%; height: 90px; display: flex; align-items: center; justify-content: center; font-size: 36px; background: var(--bg-2); }
+    .mini-prod-info { padding: 8px; font-size: 12px; font-weight: 600; }
+
+    /* Section */
+    section { padding: 80px 0; }
+    .section-soft { background: var(--bg-2); }
+    .section-head { text-align: center; margin-bottom: 52px; }
+    .section-kicker {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent); display: inline-block; margin-bottom: 12px;
+    }
+    .section-head h2 { font-size: clamp(26px, 4vw, 42px); margin-bottom: 10px; }
+    .section-head p { color: var(--muted); max-width: 480px; margin: 0 auto; }
+
+    /* Products Grid */
+    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .shop-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; cursor: pointer;
+    }
+    .shop-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(167,139,250,0.3);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+    .shop-card-img { width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 56px; }
+    .shop-card-img.c1 { background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(167,139,250,0.08)); }
+    .shop-card-img.c2 { background: linear-gradient(135deg, rgba(34,211,238,0.1), rgba(59,130,246,0.08)); }
+    .shop-card-img.c3 { background: linear-gradient(135deg, rgba(236,72,153,0.1), rgba(124,58,237,0.08)); }
+    .shop-card-img.c4 { background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(239,68,68,0.06)); }
+    .shop-card-body { padding: 16px; }
+    .shop-card-cat { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
+    .shop-card-name { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .shop-card-desc { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+    .shop-card-footer { display: flex; align-items: center; justify-content: space-between; }
+    .shop-price { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 800; }
+    .shop-add { padding: 8px 16px; background: var(--accent-dim); color: var(--accent); border-radius: 99px; font-size: 12px; font-weight: 700; border: 1px solid rgba(167,139,250,0.2); cursor: pointer; transition: background 0.2s; }
+    .shop-add:hover { background: var(--purple); color: #fff; }
+
+    /* Features */
+    .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .feature-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 28px 24px; text-align: center;
+      transition: border-color 0.2s;
+    }
+    .feature-card:hover { border-color: rgba(167,139,250,0.25); }
+    .feature-icon { font-size: 32px; margin-bottom: 14px; }
+    .feature-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .feature-text { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* Newsletter */
+    .newsletter {
+      background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(34,211,238,0.06));
+      border: 1px solid rgba(167,139,250,0.15);
+      border-radius: var(--radius);
+      padding: 56px;
+      text-align: center;
+      max-width: 680px; margin: 0 auto;
+    }
+    .newsletter h2 { font-size: clamp(24px, 3.5vw, 36px); margin-bottom: 10px; }
+    .newsletter p { color: var(--muted); margin-bottom: 28px; }
+    .email-form { display: flex; gap: 12px; max-width: 440px; margin: 0 auto; flex-wrap: wrap; }
+    .email-input {
+      flex: 1; padding: 13px 18px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 99px;
+      color: var(--text); font-size: 14px; outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-input:focus { border-color: var(--accent); }
+    .email-input::placeholder { color: var(--muted); }
+
+    /* Reviews */
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .review-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px;
+    }
+    .review-stars { color: var(--accent); font-size: 14px; margin-bottom: 10px; }
+    .review-text { font-size: 14px; color: var(--muted); margin-bottom: 16px; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 10px; }
+    .review-ava {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--accent));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .review-name { font-size: 13px; font-weight: 700; }
+    .review-meta { font-size: 12px; color: var(--muted); }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-2); border-top: 1px solid var(--border);
+      padding: 32px 0;
+    }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .footer-text { font-size: 13px; color: var(--muted); }
+    .footer-text a { color: var(--accent); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); } .features-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 860px) { .hero-inner { grid-template-columns: 1fr; gap: 48px; } .reviews-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .nav-links { display: none; } .products-grid { grid-template-columns: 1fr 1fr; } .newsletter { padding: 32px 20px; } }
+    @media (max-width: 420px) { .products-grid { grid-template-columns: 1fr; } .features-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- Top Notice -->
+  <div class="top-note">
+    <div class="container">
+      <span>Demo-Beispielseite · Kein echtes Unternehmen</span>
+      <a class="top-link" href="../../index.html">← Zurück zu Lumi Digital</a>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="nav-logo">NOVA·FASHION</div>
+      <nav class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#new">Neuheiten</a>
+        <a href="#sale">Sale</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="cart-btn">🛒<span class="cart-count">3</span></div>
+        <a class="nav-cta" href="#shop">Shop now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-label">Neue Kollektion 2025</div>
+          <h1>Mode, die<br /><span class="grad">ausdrückt,</span><br />wer du bist.</h1>
+          <p class="hero-sub">Handverlesene Pieces für jeden Style – klare Designs, hochwertige Materialien, faire Preise. Immer frisch aus unserer Curated Collection.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#shop">Kollektion entdecken</a>
+            <a class="btn-ghost" href="#new">Neuheiten ansehen</a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-faces">
+              <div class="face">👩</div>
+              <div class="face">👨</div>
+              <div class="face">👩🏽</div>
+              <div class="face">👨🏻</div>
+            </div>
+            <div class="trust-text"><strong>1.200+</strong> begeisterte Kunden · ★ 4.9</div>
+          </div>
+        </div>
+
+        <div class="hero-products">
+          <div class="product-featured">
+            <div class="prod-img-placeholder">👗</div>
+            <div class="prod-body">
+              <div>
+                <div class="prod-title">Evening Silk Dress – Midnight</div>
+                <div class="prod-meta">Gr. XS – XL · In 3 Farben</div>
+              </div>
+              <div style="text-align:right">
+                <div class="prod-price">89,90 €</div>
+                <a class="add-btn" href="#shop">🛒 In den Warenkorb</a>
+              </div>
+            </div>
+          </div>
+          <div class="mini-products">
+            <div class="mini-prod">
+              <div class="mini-prod-img">👔</div>
+              <div class="mini-prod-info">Signature Blazer · 129 €</div>
+            </div>
+            <div class="mini-prod">
+              <div class="mini-prod-img">👟</div>
+              <div class="mini-prod-info">Cloud Sneaker · 79 €</div>
+            </div>
+            <div class="mini-prod">
+              <div class="mini-prod-img">👜</div>
+              <div class="mini-prod-info">Mini Tote Bag · 59 €</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features bar -->
+  <div style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:20px 0;">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚚</div>
+          <div class="feature-title">Kostenloser Versand</div>
+          <p class="feature-text">Ab 50 € – deutschlandweit, schnell und zuverlässig.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">↩️</div>
+          <div class="feature-title">30 Tage Rückgabe</div>
+          <p class="feature-text">Nicht überzeugt? Kein Problem. Kostenlos zurückschicken.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-title">Sichere Zahlung</div>
+          <p class="feature-text">PayPal, Kreditkarte, Klarna – SSL-verschlüsselt.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌿</div>
+          <div class="feature-title">Nachhaltig</div>
+          <p class="feature-text">Faire Produktion, nachhaltige Materialien – gut für dich & die Welt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shop New -->
+  <section id="new">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Neuheiten</div>
+        <h2>Frisch eingetroffen</h2>
+        <p>Die neuesten Pieces aus unserer aktuellen Kollektion. Limitierte Stückzahl!</p>
+      </div>
+      <div class="products-grid">
+        <div class="shop-card">
+          <div class="shop-card-img c1">✨👗</div>
+          <div class="shop-card-body">
+            <div class="shop-card-cat">Kleider</div>
+            <div class="shop-card-name">Velvet Wrap Dress</div>
+            <div class="shop-card-desc">Traumhafter Samt, perfekte Passform. Für Abend & Office.</div>
+            <div class="shop-card-footer"><span class="shop-price">98 €</span><button class="shop-add">+ Warenkorb</button></div>
+          </div>
+        </div>
+        <div class="shop-card">
+          <div class="shop-card-img c2">🧥</div>
+          <div class="shop-card-body">
+            <div class="shop-card-cat">Jacken</div>
+            <div class="shop-card-name">Oversized Denim Jacket</div>
+            <div class="shop-card-desc">Zeitloser Klassiker. Passt zu jedem Look, zu jeder Jahreszeit.</div>
+            <div class="shop-card-footer"><span class="shop-price">119 €</span><button class="shop-add">+ Warenkorb</button></div>
+          </div>
+        </div>
+        <div class="shop-card">
+          <div class="shop-card-img c3">👠</div>
+          <div class="shop-card-body">
+            <div class="shop-card-cat">Schuhe</div>
+            <div class="shop-card-name">Heeled Mule Sandal</div>
+            <div class="shop-card-desc">Elegante Sandale für den Sommer. In 4 Nude-Tönen.</div>
+            <div class="shop-card-footer"><span class="shop-price">84 €</span><button class="shop-add">+ Warenkorb</button></div>
+          </div>
+        </div>
+        <div class="shop-card">
+          <div class="shop-card-img c4">💍</div>
+          <div class="shop-card-body">
+            <div class="shop-card-cat">Accessoires</div>
+            <div class="shop-card-name">Gold Layer Necklace</div>
+            <div class="shop-card-desc">Zarte Halskette, 18K vergoldet. Wasserfest & allergenarm.</div>
+            <div class="shop-card-footer"><span class="shop-price">39 €</span><button class="shop-add">+ Warenkorb</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sale -->
+  <section id="sale" class="section-soft">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker" style="color:#f87171;">Sale · Bis -50%</div>
+        <h2>Letzte Chance</h2>
+        <p>Reduzierte Pieces aus vergangenen Kollektionen – solange der Vorrat reicht.</p>
+      </div>
+      <div class="products-grid">
+        <div class="shop-card">
+          <div class="shop-card-img" style="background:linear-gradient(135deg,rgba(239,68,68,.1),rgba(245,158,11,.08)); height:200px; display:flex; align-items:center; justify-content:center; font-size:56px;">👜</div>
+          <div class="shop-card-body">
+            <div class="shop-card-cat">Taschen · <span style="color:#f87171">-40%</span></div>
+            <div class="shop-card-name">Structured Leather Bag</div>
+            <div class="shop-card-desc">Klassische Laptoptasche aus echtem Leder. Zeitlos schön.</div>
+            <div class="shop-card-footer">
+              <div><span class="shop-price">89 €</span> <span style="font-size:13px; color:var(--muted); text-decoration:line-through">149 €</span></div>
+              <button class="shop-add">+ Warenkorb</button>
+            </div>
+          </div>
+        </div>
+        <div class="shop-card">
+          <div class="shop-card-img" style="background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(34,211,238,.08)); height:200px; display:flex; align-items:center; justify-content:center; font-size:56px;">🧣</div>
+          <div class="shop-card-body">
+            <div class="shop-card-cat">Accessoires · <span style="color:#f87171">-50%</span></div>
+            <div class="shop-card-name">Cashmere Scarf Combo</div>
+            <div class="shop-card-desc">Set aus Schal + Mütze. 100% Kaschmir, kuschelweich.</div>
+            <div class="shop-card-footer">
+              <div><span class="shop-price">49 €</span> <span style="font-size:13px; color:var(--muted); text-decoration:line-through">98 €</span></div>
+              <button class="shop-add">+ Warenkorb</button>
+            </div>
+          </div>
+        </div>
+        <div class="shop-card">
+          <div class="shop-card-img" style="background:linear-gradient(135deg,rgba(167,139,250,.1),rgba(236,72,153,.08)); height:200px; display:flex; align-items:center; justify-content:center; font-size:56px;">👒</div>
+          <div class="shop-card-body">
+            <div class="shop-card-cat">Hüte · <span style="color:#f87171">-35%</span></div>
+            <div class="shop-card-name">Wide Brim Sun Hat</div>
+            <div class="shop-card-desc">Fedora-Stil, UV-Schutz 50+. Perfekt für den Urlaub.</div>
+            <div class="shop-card-footer">
+              <div><span class="shop-price">38 €</span> <span style="font-size:13px; color:var(--muted); text-decoration:line-through">58 €</span></div>
+              <button class="shop-add">+ Warenkorb</button>
+            </div>
+          </div>
+        </div>
+        <div class="shop-card">
+          <div class="shop-card-img" style="background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(239,68,68,.06)); height:200px; display:flex; align-items:center; justify-content:center; font-size:56px;">🩱</div>
+          <div class="shop-card-body">
+            <div class="shop-card-cat">Bademode · <span style="color:#f87171">-40%</span></div>
+            <div class="shop-card-name">High-Cut Swimsuit</div>
+            <div class="shop-card-desc">Stilvolles Einteiler-Design. In 6 Farben. S–XL.</div>
+            <div class="shop-card-footer">
+              <div><span class="shop-price">42 €</span> <span style="font-size:13px; color:var(--muted); text-decoration:line-through">69 €</span></div>
+              <button class="shop-add">+ Warenkorb</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Kundenmeinungen</div>
+        <h2>Das sagen unsere Kunden.</h2>
+        <p>Über 1.200 zufriedene Käufer – die für sich sprechen.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Die Qualität hat mich wirklich überrascht – für den Preis absolut unschlagbar. Das Kleid passt perfekt und die Lieferung kam in 2 Tagen.</p>
+          <div class="review-author">
+            <div class="review-ava">AK</div>
+            <div><div class="review-name">Anna K.</div><div class="review-meta">München · Velvet Wrap Dress</div></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Ich war skeptisch beim Online-Kauf von Mode – aber alles hat gepasst. Die Rückgabe war auch super einfach. Definitiv wieder!</p>
+          <div class="review-author">
+            <div class="review-ava">LS</div>
+            <div><div class="review-name">Laura S.</div><div class="review-meta">Berlin · Denim Jacket und Schal</div></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Die Necklace ist wunderschön. Ganz dezent und trotzdem ein echter Hingucker. Habe schon drei Komplimente bekommen!</p>
+          <div class="review-author">
+            <div class="review-ava">MR</div>
+            <div><div class="review-name">Maya R.</div><div class="review-meta">Hamburg · Gold Layer Necklace</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section-soft">
+    <div class="container">
+      <div class="newsletter">
+        <h2>Nichts mehr verpassen.</h2>
+        <p>Neue Kollektionen, exklusive Sales und Styleinspirations – direkt in dein Postfach.</p>
+        <form class="email-form" onsubmit="return false">
+          <input class="email-input" type="email" placeholder="deine@email.de" />
+          <button class="btn-primary" type="submit">Anmelden</button>
+        </form>
+        <p style="font-size:12px; color:var(--muted); margin-top:12px;">Kein Spam. Jederzeit abmeldbar.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">NOVA·FASHION</div>
+      <p class="footer-text">© <span id="year"></span> Demo by <a href="../../index.html">Lumi Digital</a> · Kein echtes Unternehmen</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Immobilien Prestige – Premium Demo · Lumi Digital</title>
+  <meta name="description" content="Premium Immobilienmakler-Demo – Designbeispiel von Lumi Digital. Für Makler, die Vertrauen und Klasse ausstrahlen wollen." />
+  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link href="https://fonts.bunny.net/css?family=outfit:300,400,500,600,700,800&family=inter:400,500,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a96e;
+      --gold-light: #e2c896;
+      --gold-dim: rgba(201,169,110,0.15);
+      --bg: #0a0b0f;
+      --bg-2: #10121a;
+      --bg-card: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --text: #f0ede8;
+      --muted: rgba(240,237,232,0.55);
+      --radius: 16px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 700; line-height: 1.2; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* Top Notice */
+    .top-note {
+      background: var(--gold-dim);
+      border-bottom: 1px solid rgba(201,169,110,0.2);
+      padding: 10px 0;
+      font-size: 13px;
+      color: var(--gold-light);
+      text-align: center;
+    }
+    .top-note .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .top-link { color: var(--gold); text-decoration: none; font-weight: 600; }
+    .top-link:hover { text-decoration: underline; }
+
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,11,15,0.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; color: var(--gold); letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--text); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .btn-nav {
+      padding: 10px 22px;
+      background: var(--gold);
+      color: #0a0b0f;
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-nav:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* Hero */
+    .hero {
+      padding: 96px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 600px;
+      background: radial-gradient(ellipse, rgba(201,169,110,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block; width: 24px; height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero-sub { color: var(--muted); font-size: 17px; margin-bottom: 36px; max-width: 420px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 14px 28px;
+      background: var(--gold);
+      color: #0a0b0f;
+      border-radius: 99px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-ghost {
+      padding: 14px 28px;
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); background: var(--gold-dim); }
+
+    .hero-stats { display: flex; gap: 32px; margin-top: 40px; }
+    .stat-item { display: flex; flex-direction: column; }
+    .stat-num { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: var(--gold); }
+    .stat-txt { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* Feature card on hero right */
+    .hero-card-wrap { position: relative; }
+    .hero-main-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+    .property-img {
+      width: 100%; height: 260px;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #1a1e2e, #0f1219);
+    }
+    .property-img-placeholder {
+      width: 100%; height: 260px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(201,169,110,0.1), rgba(124,58,237,0.08));
+      font-size: 64px;
+    }
+    .property-body { padding: 20px; }
+    .property-tag {
+      display: inline-block;
+      background: var(--gold-dim);
+      color: var(--gold);
+      font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .property-title { font-size: 20px; margin-bottom: 6px; }
+    .property-price { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; color: var(--gold); }
+    .property-details { display: flex; gap: 16px; margin-top: 12px; color: var(--muted); font-size: 13px; }
+    .property-details span { display: flex; align-items: center; gap: 5px; }
+
+    .hero-badge-float {
+      position: absolute;
+      bottom: -16px; left: -20px;
+      background: linear-gradient(135deg, #1a1e2e, #0f1219);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      display: flex; align-items: center; gap: 12px;
+      font-size: 13px;
+      backdrop-filter: blur(12px);
+    }
+    .badge-icon { font-size: 24px; }
+    .badge-label { color: var(--muted); font-size: 12px; }
+    .badge-value { font-weight: 700; color: var(--text); }
+
+    /* Section base */
+    section { padding: 88px 0; }
+    .section-soft { background: var(--bg-2); }
+    .section-head { text-align: center; margin-bottom: 56px; }
+    .section-kicker {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); display: inline-flex; align-items: center; gap: 8px;
+      margin-bottom: 14px;
+    }
+    .section-kicker::before, .section-kicker::after {
+      content: ''; display: block; width: 20px; height: 1px; background: var(--gold);
+    }
+    .section-head h2 { font-size: clamp(28px, 4vw, 44px); margin-bottom: 12px; }
+    .section-head p { color: var(--muted); max-width: 500px; margin: 0 auto; font-size: 16px; }
+
+    /* Property Grid */
+    .prop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .prop-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+    .prop-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201,169,110,0.3);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,169,110,0.1);
+    }
+    .prop-card-img {
+      width: 100%; height: 200px;
+      object-fit: cover;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 56px;
+    }
+    .prop-card-img.ph { background: linear-gradient(135deg, rgba(201,169,110,0.08), rgba(124,58,237,0.06)); }
+    .prop-card-body { padding: 18px; }
+    .prop-card-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 8px; }
+    .prop-card-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+    .prop-card-loc { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+    .prop-card-price { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; color: var(--gold); }
+    .prop-card-details { display: flex; gap: 14px; margin-top: 10px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 14px; flex-wrap: wrap; }
+    .prop-card-details span { white-space: nowrap; }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .service-card:hover { border-color: rgba(201,169,110,0.25); transform: translateY(-4px); }
+    .service-icon { font-size: 36px; margin-bottom: 18px; }
+    .service-title { font-size: 20px; margin-bottom: 10px; }
+    .service-text { color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+    /* Testimonials */
+    .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 860px; margin: 0 auto; }
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      position: relative;
+    }
+    .testi-card::before {
+      content: '\201C';
+      position: absolute; top: 12px; left: 20px;
+      font-size: 64px; font-family: 'Outfit', sans-serif;
+      color: var(--gold-dim); line-height: 1;
+      pointer-events: none;
+    }
+    .testi-stars { color: var(--gold); font-size: 15px; margin-bottom: 12px; }
+    .testi-text { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), rgba(201,169,110,0.4));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: #0a0b0f;
+      flex-shrink: 0;
+    }
+    .testi-name { font-weight: 700; font-size: 14px; }
+    .testi-role { font-size: 12px; color: var(--muted); }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(201,169,110,0.08), rgba(124,58,237,0.05));
+      border: 1px solid rgba(201,169,110,0.15);
+      border-radius: var(--radius);
+      padding: 64px;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cta-title { font-size: clamp(26px, 4vw, 40px); margin-bottom: 14px; }
+    .cta-sub { color: var(--muted); margin-bottom: 32px; font-size: 16px; }
+    .cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .footer a { color: var(--gold); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-card-wrap { order: -1; }
+      .prop-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 40px 24px; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .prop-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-wrap: wrap; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Notice -->
+  <div class="top-note">
+    <div class="container">
+      <span>Demo-Beispielseite · Kein echtes Unternehmen</span>
+      <a class="top-link" href="../../index.html">← Zurück zu Lumi Digital</a>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="nav-logo">PRESTIGE<span>Immobilien</span></div>
+      <nav class="nav-links">
+        <a href="#properties">Objekte</a>
+        <a href="#services">Leistungen</a>
+        <a href="#reviews">Referenzen</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+      <a class="btn-nav" href="#contact">Kostenlos beraten</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="hero-kicker">Premium Immobilienmakler</div>
+          <h1>Ihre <em>Traumimmobilie</em><br />wartet bereits<br />auf Sie.</h1>
+          <p class="hero-sub">Exklusive Objekte. Persönliche Beratung. Professionelle Abwicklung – von der ersten Besichtigung bis zur Schlüsselübergabe.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#properties">Objekte entdecken</a>
+            <a class="btn-ghost" href="#contact">Kostenlose Erstberatung</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">340+</span>
+              <span class="stat-txt">erfolgreiche Verkäufe</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">4.9★</span>
+              <span class="stat-txt">Kundenbewertung</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">18 J.</span>
+              <span class="stat-txt">Markterfahrung</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card-wrap">
+          <div class="hero-main-card">
+            <div class="property-img-placeholder">🏡</div>
+            <div class="property-body">
+              <div class="property-tag">📍 München · Schwabing</div>
+              <div class="property-title">Luxus-Penthouse mit Dachterrasse</div>
+              <div class="property-price">1.390.000 €</div>
+              <div class="property-details">
+                <span>🛏 4 Zimmer</span>
+                <span>🛁 2 Bäder</span>
+                <span>📐 145 m²</span>
+                <span>🅿️ Tiefgarage</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-badge-float">
+            <div class="badge-icon">🔑</div>
+            <div>
+              <div class="badge-label">Verfügbar ab</div>
+              <div class="badge-value">Sofort bezugsfertig</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties -->
+  <section id="properties" class="section-soft">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Aktuelle Objekte</div>
+        <h2>Exklusive Immobilien</h2>
+        <p>Handverlesene Objekte in bevorzugten Lagen – für anspruchsvolle Käufer.</p>
+      </div>
+      <div class="prop-grid">
+
+        <article class="prop-card">
+          <div class="prop-card-img ph">🏢</div>
+          <div class="prop-card-body">
+            <div class="prop-card-tag">Eigentumswohnung · Neu</div>
+            <div class="prop-card-title">Penthouse Maxvorstadt</div>
+            <div class="prop-card-loc">📍 München, Maxvorstadt</div>
+            <div class="prop-card-price">1.850.000 €</div>
+            <div class="prop-card-details">
+              <span>🛏 5 Zi.</span>
+              <span>📐 168 m²</span>
+              <span>🅿️ 2 Stellplätze</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="prop-card">
+          <div class="prop-card-img ph">🏠</div>
+          <div class="prop-card-body">
+            <div class="prop-card-tag">Einfamilienhaus · Rarität</div>
+            <div class="prop-card-title">Villa mit Garten & Pool</div>
+            <div class="prop-card-loc">📍 Starnberg, Seeblick</div>
+            <div class="prop-card-price">3.200.000 €</div>
+            <div class="prop-card-details">
+              <span>🛏 7 Zi.</span>
+              <span>📐 310 m²</span>
+              <span>🌳 800 m² Garten</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="prop-card">
+          <div class="prop-card-img ph">🏙️</div>
+          <div class="prop-card-body">
+            <div class="prop-card-tag">Neubauwohnung · Erstbezug</div>
+            <div class="prop-card-title">Design-Apartment Bogenhausen</div>
+            <div class="prop-card-loc">📍 München, Bogenhausen</div>
+            <div class="prop-card-price">980.000 €</div>
+            <div class="prop-card-details">
+              <span>🛏 3 Zi.</span>
+              <span>📐 95 m²</span>
+              <span>🏋️ Concierge</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="prop-card">
+          <div class="prop-card-img ph">🏡</div>
+          <div class="prop-card-body">
+            <div class="prop-card-tag">Reihenhaus · Ruhiglage</div>
+            <div class="prop-card-title">Familienhaus mit Terrasse</div>
+            <div class="prop-card-loc">📍 Grünwald</div>
+            <div class="prop-card-price">1.140.000 €</div>
+            <div class="prop-card-details">
+              <span>🛏 5 Zi.</span>
+              <span>📐 165 m²</span>
+              <span>🌻 250 m² Garten</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="prop-card">
+          <div class="prop-card-img ph">🌇</div>
+          <div class="prop-card-body">
+            <div class="prop-card-tag">Gewerbe · Investment</div>
+            <div class="prop-card-title">Büroetage Innenstadt</div>
+            <div class="prop-card-loc">📍 München City</div>
+            <div class="prop-card-price">2.450.000 €</div>
+            <div class="prop-card-details">
+              <span>📐 320 m²</span>
+              <span>🏗 Kernsaniert</span>
+              <span>📈 Top-Rendite</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="prop-card">
+          <div class="prop-card-img ph">🛖</div>
+          <div class="prop-card-body">
+            <div class="prop-card-tag">Landhaus · Exklusiv</div>
+            <div class="prop-card-title">Chalet am Ammersee</div>
+            <div class="prop-card-loc">📍 Ammersee, Herrsching</div>
+            <div class="prop-card-price">1.690.000 €</div>
+            <div class="prop-card-details">
+              <span>🛏 6 Zi.</span>
+              <span>📐 220 m²</span>
+              <span>⛵ Bootssteg mögl.</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Unsere Leistungen</div>
+        <h2>Full-Service aus einer Hand</h2>
+        <p>Von der Bewertung bis zum notariellen Abschluss – wir begleiten Sie bei jedem Schritt.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <div class="service-title">Marktpreisanalyse</div>
+          <p class="service-text">Fundierte Wertermittlung auf Basis aktueller Marktdaten – damit Sie den optimalen Preis erzielen.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📸</div>
+          <div class="service-title">Premium-Vermarktung</div>
+          <p class="service-text">Professionelle Fotografie, 3D-Exposé und gezielte Platzierung auf allen relevanten Portalen.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🤝</div>
+          <div class="service-title">Verhandlung & Abschluss</div>
+          <p class="service-text">Erfahrene Verhandlungsführung und sichere Abwicklung – bis das Notariat abgeschlossen ist.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="section-soft">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Referenzen</div>
+        <h2>Was unsere Kunden sagen.</h2>
+        <p>Vertrauen, das durch Ergebnisse entsteht.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Die Zusammenarbeit war erstklassig. Innerhalb von drei Wochen hatten wir einen Käufer – zum Wunschpreis. Absolut empfehlenswert.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MK</div>
+            <div>
+              <div class="testi-name">Michael König</div>
+              <div class="testi-role">Verkäufer, München-Schwabing</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Als Erstkäufer hat uns das Team mit unglaublich viel Geduld und Transparenz begleitet. Wir fühlten uns in jeder Phase bestens beraten.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">LB</div>
+            <div>
+              <div class="testi-name">Laura Braun</div>
+              <div class="testi-role">Käuferin, Starnberg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="cta-section">
+        <h2 class="cta-title">Bereit für Ihre nächste Immobilie?</h2>
+        <p class="cta-sub">Vereinbaren Sie noch heute eine kostenlose, unverbindliche Erstberatung. Wir freuen uns auf Sie.</p>
+        <div class="cta-actions">
+          <a class="btn-primary" href="tel:+49999999999">☎ Jetzt anrufen</a>
+          <a class="btn-ghost" href="https://wa.me/4917655585526" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+        <p style="margin-top:20px; font-size:12px; color:var(--muted);">Demo-Hinweis: Diese Seite ist ein Gestaltungsbeispiel von <strong style="color:var(--gold)">Lumi Digital</strong>. Keine echten Objekte oder Personen.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> PRESTIGE Immobilien · Demo by <a href="../../index.html">Lumi Digital</a></span>
+      <span>Diese Seite ist ein nicht-kommerzielles Designbeispiel.</span>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

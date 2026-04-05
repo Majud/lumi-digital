@@ -33,3 +33,103 @@
   color: var(--muted);
   font-size: 16px;
 }
+
+/* ===========================
+   Marquee (Social Proof)
+   =========================== */
+.marquee-section {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(15, 19, 33, 0.4);
+  overflow: hidden;
+}
+.marquee-kicker {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-family: 'Outfit', sans-serif;
+}
+.marquee {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+.marquee__inner {
+  display: flex;
+  gap: 80px;
+  white-space: nowrap;
+  animation: marquee 35s linear infinite;
+  align-items: center;
+  min-width: 200%;
+}
+.marquee__item {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===========================
+   Testimonials
+   =========================== */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.testi-card {
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  position: relative;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.testi-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 24px;
+}
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testi-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(34,211,238,.2), rgba(124,58,237,.2));
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--text);
+}
+.testi-meta h4 {
+  margin: 0 0 2px;
+  font-size: 15px;
+  font-family: 'Outfit', sans-serif;
+}
+.testi-meta span {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
